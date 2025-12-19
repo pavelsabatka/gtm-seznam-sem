@@ -2,5 +2,5 @@ homepage: "https://www.sabatka.net/cs/"
 documentation: "https://www.sabatka.net/cs/seznam-sem-gtm-template/"
 
 versions:
-  - sha: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  - sha: 62f3a0a7b4f0cd82d9eaaf2ad37a24a630fc2815
     changeNotes: Initial release.
