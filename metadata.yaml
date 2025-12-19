@@ -1,0 +1,6 @@
+homepage: "https://www.sabatka.net/cs/"
+documentation: "https://www.sabatka.net/cs/seznam-sem-gtm-template/"
+
+versions:
+  - sha: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    changeNotes: Initial release.
