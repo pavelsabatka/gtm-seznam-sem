@@ -15,6 +15,7 @@ ___INFO___
   "securityGroups": [],
   "displayName": "Seznam SEM",
   "categories": [
+    "MARKETING",
     "REMARKETING",
     "ADVERTISING"
   ],
@@ -1298,7 +1299,6 @@ scenarios:
     runCode(mockData);
 
     let expectedParams = {
-      "event_time":1766595600,
       "currency":"CZK"
     };
 
@@ -1308,7 +1308,6 @@ scenarios:
     runCode(mockData);
 
     let expectedParams = {
-      "event_time":1766595600,
       "currency":"CZK"
     };
 
@@ -1325,7 +1324,6 @@ scenarios:
 
 
     let expectedParams = {
-      "event_time":1766595600,
       "currency":"CZK"
     };
 
@@ -1345,7 +1343,6 @@ scenarios:
     assertApi('callInWindow').wasCalled();
 
     let expectedParams = {
-      "event_time":1766595600,
       "currency":"CZK"
     };
 
@@ -1363,13 +1360,12 @@ scenarios:
     \  'item_category3': \"Běžecké boty\",\n  'item_category4': false,\n  'item_category5':\
     \ false\n}];\nmockData.order = {\n  'id': 'T_123',\n  'value': 11154.54,\n  'shipping':\
     \ 99,\n  'shipping_type': 'holub',\n  'payment': 19\n};\n\nrunCode(mockData);\n\
-    \nlet expectedParams = {\n  \"event_time\":1766595600,\n  \"currency\":\"CZK\"\
-    ,\n  \n  \"order_id\": \"T_123\",\n  \"value\": 11154.54,\n  \"event_id\": \"\
-    Purchase__T_123\",\n  \"delivery_price\": 99,\n  \"delivery_type\": \"holub\"\
-    ,\n  \n  'content_type': 'product',\n  'contents': [{\n    'content_name': 'Adidas\
-    \ Ultraboost',\n    'content_category': 'Boty | Sportovní boty | Běžecké boty',\n\
-    \    'id': 'SKU_12345',\n    'quantity': 3,\n    'unit_price': 3718.18\n  }]\n\
-    };\n\nassertHitWasSent('Purchase', expectedParams);"
+    \nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \n  \"order_id\": \"T_123\"\
+    ,\n  \"value\": 11154.54,\n  \"event_id\": \"Purchase__T_123\",\n  \"delivery_price\"\
+    : 99,\n  \"delivery_type\": \"holub\",\n  \n  'content_type': 'product',\n  'contents':\
+    \ [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category': 'Boty\
+    \ | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity': 3,\n\
+    \    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('Purchase', expectedParams);"
 - name: Event Params - Purchase - Zero value
   code: "mockData.event_name = 'Purchase';\nmockData.content_type = 'product';\nmockData.user\
     \ = user;\nmockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name':\
@@ -1378,37 +1374,36 @@ scenarios:
     \  'item_category3': \"Běžecké boty\",\n  'item_category4': false,\n  'item_category5':\
     \ false\n}];\nmockData.order = {\n  'id': 'T_123',\n  'value': 0,\n  'shipping':\
     \ 99,\n  'shipping_type': 'holub',\n  'payment': 19\n};\n\nrunCode(mockData);\n\
-    \nlet expectedParams = {\n  \"event_time\":1766595600,\n  \"currency\":\"CZK\"\
-    ,\n  \n  \"order_id\": \"T_123\",\n  \"value\": 0,\n  \"event_id\": \"Purchase__T_123\"\
-    ,\n  \"delivery_price\": 99,\n  \"delivery_type\": \"holub\",\n  \n  'content_type':\
-    \ 'product',\n  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n   \
-    \ 'content_category': 'Boty | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n\
-    \    'quantity': 3,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('Purchase',\
-    \ expectedParams);"
+    \nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \n  \"order_id\": \"T_123\"\
+    ,\n  \"value\": 0,\n  \"event_id\": \"Purchase__T_123\",\n  \"delivery_price\"\
+    : 99,\n  \"delivery_type\": \"holub\",\n  \n  'content_type': 'product',\n  'contents':\
+    \ [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category': 'Boty\
+    \ | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity': 3,\n\
+    \    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('Purchase', expectedParams);"
 - name: Event Params - ViewContent
   code: "mockData.event_name = 'ViewContent';\nmockData.content_type = 'product';\n\
     mockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\"\
     ,\n  'price': 3718.18,\n  'fullPrice': 4499,\n  'quantity': 1,\n  'item_category':\
     \ \"Boty\",\n  'item_category2': \"Sportovní boty\",\n  'item_category3': \"Bě\
     žecké boty\",\n  'item_category4': false,\n  'item_category5': false\n}];\n\n\
-    runCode(mockData);\n\nlet expectedParams = {\n  \"event_time\":1766595600,\n \
-    \ \"currency\":\"CZK\",\n  'value': 3718.18,\n  \n  'content_type': 'product',\n\
-    \  'content_category': 'Boty | Sportovní boty | Běžecké boty',\n  'contents':\
-    \ [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category': 'Boty\
-    \ | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity': 1,\n\
-    \    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('ViewContent', expectedParams);"
+    runCode(mockData);\n\nlet expectedParams = {\n  \"currency\":\"CZK\",\n  'value':\
+    \ 3718.18,\n  \n  'content_type': 'product',\n  'content_category': 'Boty | Sportovní\
+    \ boty | Běžecké boty',\n  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n\
+    \    'content_category': 'Boty | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n\
+    \    'quantity': 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('ViewContent',\
+    \ expectedParams);"
 - name: Event Params - AddToCart
   code: "mockData.event_name = 'AddToCart';\nmockData.content_type = 'product';\n\
     mockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\"\
     ,\n  'price': 3718.18,\n  'fullPrice': 4499,\n  'quantity': 1,\n  'item_category':\
     \ \"Boty\",\n  'item_category2': \"Sportovní boty\",\n  'item_category3': \"Bě\
     žecké boty\",\n  'item_category4': false,\n  'item_category5': false\n}];\n\n\
-    runCode(mockData);\n\nlet expectedParams = {\n  \"event_time\":1766595600,\n \
-    \ \"currency\":\"CZK\",\n  \"value\": 3718.18,\n  \n  'content_type': 'product',\n\
-    \  'content_category': 'Boty | Sportovní boty | Běžecké boty',\n  'contents':\
-    \ [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category': 'Boty\
-    \ | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity': 1,\n\
-    \    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('AddToCart', expectedParams);"
+    runCode(mockData);\n\nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \"value\"\
+    : 3718.18,\n  \n  'content_type': 'product',\n  'content_category': 'Boty | Sportovní\
+    \ boty | Běžecké boty',\n  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n\
+    \    'content_category': 'Boty | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n\
+    \    'quantity': 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('AddToCart',\
+    \ expectedParams);"
 - name: Event Params - Search
   code: "mockData.event_name = 'Search';\nmockData.content_type = 'search';\nmockData.search_string\
     \ = 'Adidas Ultra';\nmockData.search_result_count = 1;\nmockData.products = [{\n\
@@ -1416,12 +1411,11 @@ scenarios:
     \ 3718.18,\n  'fullPrice': 4499,\n  'quantity': 1,\n  'item_category': \"Boty\"\
     ,\n  'item_category2': \"Sportovní boty\",\n  'item_category3': \"Běžecké boty\"\
     ,\n  'item_category4': false,\n  'item_category5': false\n}];\n\nrunCode(mockData);\n\
-    \nlet expectedParams = {\n  \"event_time\":1766595600,\n  \"currency\":\"CZK\"\
-    ,\n  \"value\":3718.18,\n  \n  'content_type': 'search',\n  'num_items': 1,\n\
-    \  'search_string': 'Adidas Ultra',\n  \n  'contents': [{\n    'content_name':\
-    \ 'Adidas Ultraboost',\n    'content_category': 'Boty | Sportovní boty | Běžecké\
-    \ boty',\n    'id': 'SKU_12345',\n    'quantity': 1,\n    'unit_price': 3718.18\n\
-    \  }]\n};\n\nassertHitWasSent('Search', expectedParams);"
+    \nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \"value\":3718.18,\n  \n\
+    \  'content_type': 'search',\n  'num_items': 1,\n  'search_string': 'Adidas Ultra',\n\
+    \  \n  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category':\
+    \ 'Boty | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity':\
+    \ 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('Search', expectedParams);"
 - name: Custom Params
   code: |-
     mockData.custom_params = [{"name":"foo","value":"bar"}];
@@ -1429,7 +1423,6 @@ scenarios:
     runCode(mockData);
 
     let expectedParams = {
-      "event_time":1766595600,
       "currency":"CZK",
       "foo": "bar"
     };
@@ -1504,6 +1497,6 @@ setup: "\n// --------- MOCK DATA ---------\nlet mockData = {\n  'id': 12345,\n  
 
 ___NOTES___
 
-Created on 19. 12. 2025 13:02:15
+Created on 16. 1. 2026 15:17:46
 
 
