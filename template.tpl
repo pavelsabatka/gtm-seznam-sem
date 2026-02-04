@@ -753,10 +753,10 @@ function getEventParams(eventName) {
     case 'Purchase':
       params.order_id = order.transaction_id || order.id || order.orderNo;
       params.delivery_price = order.shipping || order.shipping_price || order.delivery_price;
-      params.delivery_type = order.shipping_type || order.delivery_type;
+      params.delivery_type = order.shipping_tier || order.shipping_type || order.delivery_type;
       params.payment_type = order.payment_type;
 
-      if (!params.eventId && order.id) params.event_id = 'Purchase__'+order.id;
+      if (!params.eventId && params.order_id) params.event_id = 'Purchase__'+params.order_id;
       
       params.content_type = 'product';
       params.contents = prepareProducts();
@@ -1375,6 +1375,22 @@ scenarios:
     \ [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category': 'Boty\
     \ | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity': 3,\n\
     \    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('Purchase', expectedParams);"
+- name: Event Params - Purchase - Enhanced Ecommerce
+  code: "mockData.eventName = 'Purchase';\nmockData.contentType = 'product';\nmockData.user\
+    \ = user;\nmockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name':\
+    \ \"Adidas Ultraboost\",\n  'price': 3718.18,\n  'fullPrice': 4499,\n  'quantity':\
+    \ 3,\n  'item_category': \"Boty\",\n  'item_category2': \"Sportovní boty\",\n\
+    \  'item_category3': \"Běžecké boty\",\n  'item_category4': false,\n  'item_category5':\
+    \ false\n}];\nmockData.order = {\n  'transaction_id': 'T_123',\n  'value': 11154.54,\n\
+    \  'tax': 3.60,\n  'shipping': 99,\n  'shipping_tier': 'holub',\n  'currency':\
+    \ \"CZK\",\n  'coupon': 'SUMMER_SALE',\n  'customer_type': 'new',\n  'payment':\
+    \ 19\n};\n\nrunCode(mockData);\n\nlet expectedParams = {\n  \"currency\":\"CZK\"\
+    ,\n  \n  \"order_id\": \"T_123\",\n  \"value\": 11154.54,\n  \"event_id\": \"\
+    Purchase__T_123\",\n  \"delivery_price\": 99,\n  \"delivery_type\": \"holub\"\
+    ,\n  \n  'content_type': 'product',\n  'contents': [{\n    'content_name': 'Adidas\
+    \ Ultraboost',\n    'content_category': 'Boty | Sportovní boty | Běžecké boty',\n\
+    \    'id': 'SKU_12345',\n    'quantity': 3,\n    'unit_price': 3718.18\n  }]\n\
+    };\n\nassertHitWasSent('Purchase', expectedParams);"
 - name: Event Params - Purchase - Zero value
   code: "mockData.eventName = 'Purchase';\nmockData.contentType = 'product';\nmockData.user\
     \ = user;\nmockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name':\
