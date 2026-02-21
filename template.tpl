@@ -425,6 +425,7 @@ const makeNumber = require('makeNumber');
 const makeInteger = require('makeInteger');
 const Math = require('Math');
 const getType = require('getType');
+const makeString = require('makeString');
 const Object = require('Object');
 
 
@@ -590,7 +591,8 @@ function callSEMConfig() {
  * @return array of products
  */
 function prepareProducts() {
-  const products = data.products || [];
+  let products = data.products || [];
+  if (getType(products) === 'object') products = [ products ];
   let prepared = [],
       category = [];
   
@@ -614,7 +616,7 @@ function prepareProducts() {
     }
     
     prepared.push({
-      'id': products[i].id || products[i].item_id,
+      'id': (products[i].id || products[i].item_id) ? makeString(products[i].id || products[i].item_id) : undefined,
       'content_name': products[i].name || products[i].item_name,
       'quantity': makeInteger(products[i].quantity) || 1,
       'unit_price': Math.round(100 * (makeNumber(products[i].price || products[i].priceWithVat || products[i].fullPrice) || 0)) / 100,
@@ -1427,6 +1429,30 @@ scenarios:
     : 3718.18,\n  \n  'content_type': 'product',\n  'content_category': 'Boty | Sportovní\
     \ boty | Běžecké boty',\n  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n\
     \    'content_category': 'Boty | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n\
+    \    'quantity': 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('AddToCart',\
+    \ expectedParams);"
+- name: Event Params - AddToCart - Products as Object
+  code: "mockData.eventName = 'AddToCart';\nmockData.contentType = 'product';\nmockData.products\
+    \ = {\n  'item_id': \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\",\n  'price':\
+    \ 3718.18,\n  'fullPrice': 4499,\n  'quantity': 1,\n  'item_category': \"Boty\"\
+    ,\n  'item_category2': \"Sportovní boty\",\n  'item_category3': \"Běžecké boty\"\
+    ,\n  'item_category4': false,\n  'item_category5': false\n};\n\nrunCode(mockData);\n\
+    \nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \"value\": 3718.18,\n  \n\
+    \  'content_type': 'product',\n  'content_category': 'Boty | Sportovní boty |\
+    \ Běžecké boty',\n  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n\
+    \    'content_category': 'Boty | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n\
+    \    'quantity': 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('AddToCart',\
+    \ expectedParams);"
+- name: Event Params - AddToCart - Product ID is Integer
+  code: "mockData.eventName = 'AddToCart';\nmockData.contentType = 'product';\nmockData.products\
+    \ = {\n  'item_id': 12345,\n  'item_name': \"Adidas Ultraboost\",\n  'price':\
+    \ 3718.18,\n  'fullPrice': 4499,\n  'quantity': 1,\n  'item_category': \"Boty\"\
+    ,\n  'item_category2': \"Sportovní boty\",\n  'item_category3': \"Běžecké boty\"\
+    ,\n  'item_category4': false,\n  'item_category5': false\n};\n\nrunCode(mockData);\n\
+    \nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \"value\": 3718.18,\n  \n\
+    \  'content_type': 'product',\n  'content_category': 'Boty | Sportovní boty |\
+    \ Běžecké boty',\n  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n\
+    \    'content_category': 'Boty | Sportovní boty | Běžecké boty',\n    'id': '12345',\n\
     \    'quantity': 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('AddToCart',\
     \ expectedParams);"
 - name: Event Params - Search
