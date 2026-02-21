@@ -3,11 +3,14 @@ documentation: "https://www.sabatka.net/cs/seznam-sem-gtm-template/"
 
 versions:
   # Latest version
-  - sha: dbcb03dabfca7867ed0bd20524b8c0b4750674d2
-    changeNotes: Added shipping_tier as optional parametr of order object
+  - sha: 03f79d594809cc796a860117003783d7910760d4
+    changeNotes: handling unexpected data types
     
 
   # Older versions
+  - sha: dbcb03dabfca7867ed0bd20524b8c0b4750674d2
+    changeNotes: Added shipping_tier as optional parametr of order object
+
   - sha: cffa4e8f13c8d4812aaf92c063a6a05275cb3426
     changeNotes: Minor fixes - custom params, using camel case in template fields
   
