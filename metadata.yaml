@@ -3,11 +3,14 @@ documentation: "https://www.sabatka.net/cs/seznam-sem-gtm-template/"
 
 versions:
   # Latest version
-  - sha: e70d6d80c47187bae3ee439b716d10f49695d4ef
-    changeNotes: changed script URL, updated required params
+  - sha: 3e03ec0a745911da6b7aa8c90138ad11e8b66f0b
+    changeNotes: fix of template name
     
 
   # Older versions
+  - sha: e70d6d80c47187bae3ee439b716d10f49695d4ef
+    changeNotes: changed script URL, updated required params
+  
   - sha: 03f79d594809cc796a860117003783d7910760d4
     changeNotes: handling unexpected data types
   
