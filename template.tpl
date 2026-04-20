@@ -619,10 +619,11 @@ function prepareProducts(validate) {
   let products = data.products || [];
   if (getType(products) === 'object') products = [ products ];
   let prepared = [],
-      category = [];
+      category;
   
   
   for (let i in products) {
+    category = [];
     if (products[i].category) {
       // support for MeasureHive
       category = products[i].category.split('/');
@@ -817,8 +818,11 @@ function getEventParams(eventName) {
 
     case 'AddToCart':
     case 'ViewContent':
-      params.content_type = 'product';
-      params.contents = prepareProducts();
+      params.content_type = data.contentType;
+      if (data.contentType == 'product' || data.contentType == 'product_group') {
+        const prods = prepareProducts();
+        if (prods.length) params.contents = prods;
+      }
       params.value = data.value;
       if (!params.value) {
         params.value = countProductValue(params.contents);
@@ -882,14 +886,6 @@ function getEventParams(eventName) {
       }
       break;
 
-      
-    case 'ViewContent':
-      params.content_type = data.contentType;
-      if (data.contentType == 'product' || data.contentType == 'product_group') {
-        const prods = prepareProducts();
-        if (prods.length) params.contents = prods;
-      }
-      break;
 
     case 'CustomizeProduct':
     case 'Contact':
