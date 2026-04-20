@@ -668,6 +668,7 @@ function prepareProducts(validate) {
  * @return float total value
  */
 function countProductValue(products) {
+  products = products || [];
   let v = 0;
   for (let p in products) {
     v += products[p].unit_price * products[p].quantity;
@@ -816,7 +817,6 @@ function getEventParams(eventName) {
       }
       break;
 
-    case 'AddToCart':
     case 'ViewContent':
       params.content_type = data.contentType;
       if (data.contentType == 'product' || data.contentType == 'product_group') {
