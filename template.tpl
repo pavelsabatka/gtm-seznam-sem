@@ -987,7 +987,7 @@ const eventParams = getEventParams(eventName);
 let isUserUpdateNeed = false;
 if (data.user) {
   let userData = getUserData();
-  let isUserUpdateNeed = isUserUpdateNeeded(userData);
+  isUserUpdateNeed = isUserUpdateNeeded(userData);
   templateStorage.setItem('USER_DATA', userData);
 }
 
@@ -1405,7 +1405,14 @@ scenarios:
     : 99,\n  \"delivery_type\": \"holub\",\n  \n  'content_type': 'product',\n  'contents':\
     \ [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category': 'Boty\
     \ | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity': 3,\n\
-    \    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('Purchase', expectedParams);"
+    \    'unit_price': 3718.18\n  }]\n};\n\n\nassertThat(SEM.length, 'Strange count\
+    \ of SEM calls, expected config -> updateUserData -> track PageView').isEqualTo(3);\n\
+    assertThat(SEM[0].command, 'First command must be \"config\"').isEqualTo('config');\n\
+    \nassertThat(SEM[1].command, 'Third command must be \"updateUserData\"').isEqualTo('updateUserData');\n\
+    assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);\n\
+    \nassertThat(SEM[2].command, 'Second command must be \"track\"').isEqualTo('track');\n\
+    assertThat(SEM[2].name, 'Second command name must be \"Purchase\"').isEqualTo('Purchase');\n\
+    assertThat(SEM[2].params, 'Event params are not same').isEqualTo(expectedParams);"
 - name: Event Params - Purchase - Enhanced Ecommerce
   code: "mockData.eventName = 'Purchase';\nmockData.contentType = 'product';\nmockData.user\
     \ = user;\nmockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name':\
@@ -1421,7 +1428,14 @@ scenarios:
     \ \"delivery_type\": \"holub\",\n  \n  'content_type': 'product',\n  'contents':\
     \ [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category': 'Boty\
     \ | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity': 3,\n\
-    \    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('Purchase', expectedParams);"
+    \    'unit_price': 3718.18\n  }]\n};\n\n\nassertThat(SEM.length, 'Strange count\
+    \ of SEM calls, expected config -> updateUserData -> track PageView').isEqualTo(3);\n\
+    assertThat(SEM[0].command, 'First command must be \"config\"').isEqualTo('config');\n\
+    \nassertThat(SEM[1].command, 'Third command must be \"updateUserData\"').isEqualTo('updateUserData');\n\
+    assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);\n\
+    \nassertThat(SEM[2].command, 'Second command must be \"track\"').isEqualTo('track');\n\
+    assertThat(SEM[2].name, 'Second command name must be \"Purchase\"').isEqualTo('Purchase');\n\
+    assertThat(SEM[2].params, 'Event params are not same').isEqualTo(expectedParams);"
 - name: Event Params - Purchase - Zero value
   code: "mockData.eventName = 'Purchase';\nmockData.contentType = 'product';\nmockData.user\
     \ = user;\nmockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name':\
@@ -1435,7 +1449,14 @@ scenarios:
     : 99,\n  \"delivery_type\": \"holub\",\n  \n  'content_type': 'product',\n  'contents':\
     \ [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category': 'Boty\
     \ | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity': 3,\n\
-    \    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('Purchase', expectedParams);"
+    \    'unit_price': 3718.18\n  }]\n};\n\n\nassertThat(SEM.length, 'Strange count\
+    \ of SEM calls, expected config -> updateUserData -> track PageView').isEqualTo(3);\n\
+    assertThat(SEM[0].command, 'First command must be \"config\"').isEqualTo('config');\n\
+    \nassertThat(SEM[1].command, 'Third command must be \"updateUserData\"').isEqualTo('updateUserData');\n\
+    assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);\n\
+    \nassertThat(SEM[2].command, 'Second command must be \"track\"').isEqualTo('track');\n\
+    assertThat(SEM[2].name, 'Second command name must be \"Purchase\"').isEqualTo('Purchase');\n\
+    assertThat(SEM[2].params, 'Event params are not same').isEqualTo(expectedParams);"
 - name: Event Params - ViewContent
   code: "mockData.eventName = 'ViewContent';\nmockData.contentType = 'product';\n\
     mockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\"\
@@ -1550,6 +1571,36 @@ scenarios:
     assertThat(SEM[1].command, 'Second command must be "track"').isEqualTo('track');
     assertThat(SEM[2].command, 'Third command must be "updateUserData"').isEqualTo('updateUserData');
     assertThat(SEM[2].params, 'Event params are not same').isEqualTo(expectedParams);
+- name: Update User Data - Before Other Event
+  code: |-
+    // standard ViewContent event
+    mockData.eventName = 'ViewContent';
+    mockData.contentType = 'product';
+    mockData.products = [{
+      'item_id': "SKU_12345",
+      'item_name': "Adidas Ultraboost",
+      'price': 3718.18,
+      'fullPrice': 4499,
+      'quantity': 1,
+      'item_category': "Boty",
+      'item_category2': "Sportovní boty",
+      'item_category3': "Běžecké boty",
+      'item_category4': false,
+      'item_category5': false
+    }];
+    // added user data
+    mockData.user = user;
+
+    runCode(mockData);
+
+
+    assertThat(SEM.length, 'Strange count of SEM calls, expected config -> updateUserData -> track PageView').isEqualTo(3);
+    assertThat(SEM[0].command, 'First command must be "config"').isEqualTo('config');
+
+    assertThat(SEM[1].command, 'Third command must be "updateUserData"').isEqualTo('updateUserData');
+    assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);
+
+    assertThat(SEM[2].command, 'Second command must be "track"').isEqualTo('track');
 setup: "\n// --------- MOCK DATA ---------\nlet mockData = {\n  'id': 12345,\n  'eventName':\
   \ 'PageView',\n  'currency': 'CZK',\n  'usingConsentModeV2': true\n};\n\nlet consentStatus\
   \ = {\n  'ad_storage': 'granted',\n  'ad_personalization': 'granted',\n  'ad_user_data':\
@@ -1558,12 +1609,16 @@ setup: "\n// --------- MOCK DATA ---------\nlet mockData = {\n  'id': 12345,\n  
   \ 'm',\n  'birth': '19800823',\n  'city': 'Brno',\n  'street': 'Brnenska 1',\n \
   \ 'postalCode': '60200',\n  'countryCode': 'CZ',\n  'subscription': 'subscription123'\n\
   };\n\nlet loadScriptImidiately = true;\nlet loadScriptCallback = null;\n\n\n// ---------\
-  \ RESET TEST ENVIRONMENT ---------\nconst log = require('logToConsole');\nconst\
-  \ templateStorage = require('templateStorage');\ntemplateStorage.clear();\nlet injectScriptTimes\
-  \ = 0;\nlet SEM = [];\n\n\n\n// --------- MOCK METHODS ---------\nmock('getTimestamp',\
-  \ function() {\n  return 1766595600; // Merry Christmas :-)\n});\n\nmock('sha256',\
-  \ function(str, succ, fail) {\n  var digest = false;\n  if (str === 'pavel@sabatka.net')\
-  \ digest = '04f7acd5d8241e64e43bbdb5a2589af98090435f190999fc9ce00d96b2c6df3a';\n\
+  \ EXPECTED DATA ------------------\n\nvar expectedUserParams = {\n  \"fn\":\"Pavel\"\
+  ,\n  \"ln\":\"Sabatka\",\n  \"ge\":\"m\",\n  \"ct\":\"Brno\",\n  \"sr\":\"Brnenska\
+  \ 1\",\n  \"zp\":\"60200\",\n  \"country\":\"CZ\",\n  \"db\":\"19800823\",\n  \"\
+  subscription_id\":\"subscription123\",\n  'em': \"pavel@sabatka.net\",\n  'ph':\
+  \ \"+420111222333\",\n};\n\n\n// --------- RESET TEST ENVIRONMENT ---------\nconst\
+  \ log = require('logToConsole');\nconst templateStorage = require('templateStorage');\n\
+  templateStorage.clear();\nlet injectScriptTimes = 0;\nlet SEM = [];\n\n\n\n// ---------\
+  \ MOCK METHODS ---------\nmock('getTimestamp', function() {\n  return 1766595600;\
+  \ // Merry Christmas :-)\n});\n\nmock('sha256', function(str, succ, fail) {\n  var\
+  \ digest = false;\n  if (str === 'pavel@sabatka.net') digest = '04f7acd5d8241e64e43bbdb5a2589af98090435f190999fc9ce00d96b2c6df3a';\n\
   \  if (str === '+420111222333') digest = '8e858b30491acc065fdb545ef111ac6a3f43a6debe60e594b46ae8915c6f6ed6';\n\
   \  if (digest) {\n    succ(digest);\n  } else {\n    fail();\n  }\n});\n\nmock('injectScript',\
   \ function(url, success, failure) {\n  injectScriptTimes++;\n  assertThat(url).isEqualTo('https://l.seznam.cz/sul.js?id=12345');\n\
@@ -1580,7 +1635,7 @@ setup: "\n// --------- MOCK DATA ---------\nlet mockData = {\n  'id': 12345,\n  
   \ param4\n    });\n  } else {\n    assertThat(false, 'Invalid command '+command).isTrue();\n\
   \  }\n});\n\n// --------- CUSTOM ASSERTATIONS ---------\nfunction assertHitWasSent(name,\
   \ params, eventId) {\n  const JSON = require('JSON');\n  params = JSON.parse(JSON.stringify(params));\n\
-  \  assertThat(SEM.length, 'Expected only 1 event').isEqualTo(2);\n  assertThat(SEM[0].command,\
+  \  assertThat(2, 'Expected only 1 event').isEqualTo(SEM.length);\n  assertThat(SEM[0].command,\
   \ 'First command must be \"config\"').isEqualTo('config');\n  assertThat(SEM[1].command,\
   \ 'Second command must be \"track\"').isEqualTo('track');\n  assertThat(SEM[1].name,\
   \ 'Event name are not same').isEqualTo(name);\n  assertThat(SEM[1].params, 'Event\
