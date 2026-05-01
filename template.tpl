@@ -268,6 +268,22 @@ ___TEMPLATE_PARAMETERS___
       },
       {
         "type": "TEXT",
+        "name": "reviewEmail",
+        "displayName": "Email for Review",
+        "simpleValueType": true,
+        "alwaysInSummary": true,
+        "enablingConditions": [
+          {
+            "paramName": "eventName",
+            "paramValue": "Purchase",
+            "type": "EQUALS"
+          }
+        ],
+        "help": "Customer\u0027s email for review. Fill in this value only with consent.",
+        "valueHint": "customer@email.cz"
+      },
+      {
+        "type": "TEXT",
         "name": "url",
         "displayName": "Page URL (optional)",
         "simpleValueType": true,
@@ -286,7 +302,15 @@ ___TEMPLATE_PARAMETERS___
         "displayName": "Content Name (optional)",
         "simpleValueType": true,
         "enablingConditions": [],
-        "help": "String of contentName (e.g. in page title). Do NOT use this field for product-level names."
+        "help": "String of contentName (e.g. in page title). Recommended for content_type \u003d page, product-level data should be used in \"Products\" field."
+      },
+      {
+        "type": "TEXT",
+        "name": "contentCategory",
+        "displayName": "Content Category (optional)",
+        "simpleValueType": true,
+        "enablingConditions": [],
+        "help": "String of content category. Recommended for content_type \u003d page, product-level data should be used in \"Products\" field."
       },
       {
         "type": "TEXT",
@@ -668,7 +692,7 @@ function prepareProducts(validate) {
  * @return float total value
  */
 function countProductValue(products) {
-  products = products || [];
+  if (!products) return;
   let v = 0;
   for (let p in products) {
     v += products[p].unit_price * products[p].quantity;
@@ -768,9 +792,6 @@ function getEventParams(eventName) {
   if (data.currency) {
     params.currency = data.currency;
   }
-  if (data.contentName) {
-    params.content_name = data.contentName;
-  }
   if (data.user && getType(data.user.registered) !== 'undefined') {
     params.status = !!data.user.registered;
   }
@@ -788,6 +809,10 @@ function getEventParams(eventName) {
       params.payment_type = getFirstValue([order.payment_type], 'string');      
       params.content_type = 'product';
       params.contents = prepareProducts(true);
+      
+      if (data.reviewEmail) {
+        params.review_email = data.reviewEmail;
+      }
 
       
       if (isDefined(data.value)) {
@@ -899,6 +924,18 @@ function getEventParams(eventName) {
 
   if (params.value) {
     params.value = Math.round(makeNumber(params.value) * 100) / 100;
+  }
+  
+  
+  if (data.contentName || data.contentCategory) {
+    if (params.contents) {
+      log('Seznam SEM: warning - you cannot use "Content Name" or "Content Category" fields when product array is set', eventName);
+    } else {
+      let content = {};
+      if (data.contentName) content.content_name = data.contentName;
+      if (data.contentCategory) content.content_category = data.contentCategory;
+      params.contents = [content];
+    }
   }
   
   
@@ -1393,20 +1430,21 @@ scenarios:
     runCode(mockData);
     assertApi('callInWindow').wasNotCalled();
 - name: Event Params - Purchase
-  code: "mockData.eventName = 'Purchase';\nmockData.contentType = 'product';\nmockData.user\
-    \ = user;\nmockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name':\
-    \ \"Adidas Ultraboost\",\n  'price': 3718.18,\n  'fullPrice': 4499,\n  'quantity':\
-    \ 3,\n  'item_category': \"Boty\",\n  'item_category2': \"Sportovní boty\",\n\
-    \  'item_category3': \"Běžecké boty\",\n  'item_category4': false,\n  'item_category5':\
-    \ false\n}];\nmockData.order = {\n  'id': 'T_123',\n  'value': 11154.54,\n  'shipping':\
-    \ 99,\n  'shipping_type': 'holub',\n  'payment': 19\n};\n\nrunCode(mockData);\n\
-    \nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \n  \"order_id\": \"T_123\"\
-    ,\n  \"value\": 11154.54,\n//  \"event_id\": \"Purchase__T_123\",\n  \"delivery_price\"\
-    : 99,\n  \"delivery_type\": \"holub\",\n  \n  'content_type': 'product',\n  'contents':\
-    \ [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category': 'Boty\
-    \ | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity': 3,\n\
-    \    'unit_price': 3718.18\n  }]\n};\n\n\nassertThat(SEM.length, 'Strange count\
-    \ of SEM calls, expected config -> updateUserData -> track PageView').isEqualTo(3);\n\
+  code: "mockData.eventName = 'Purchase';\nmockData.contentType = 'product';\nmockData.reviewEmail\
+    \ = 'pavel@sabatka.net';\nmockData.user = user;\nmockData.products = [{\n  'item_id':\
+    \ \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\",\n  'price': 3718.18,\n\
+    \  'fullPrice': 4499,\n  'quantity': 3,\n  'item_category': \"Boty\",\n  'item_category2':\
+    \ \"Sportovní boty\",\n  'item_category3': \"Běžecké boty\",\n  'item_category4':\
+    \ false,\n  'item_category5': false\n}];\nmockData.order = {\n  'id': 'T_123',\n\
+    \  'value': 11154.54,\n  'shipping': 99,\n  'shipping_type': 'holub',\n  'payment':\
+    \ 19\n};\n\nrunCode(mockData);\n\nlet expectedParams = {\n  \"currency\":\"CZK\"\
+    ,\n  \n  \"order_id\": \"T_123\",\n  \"value\": 11154.54,\n//  \"event_id\": \"\
+    Purchase__T_123\",\n  \"delivery_price\": 99,\n  \"delivery_type\": \"holub\"\
+    ,\n  \"review_email\": \"pavel@sabatka.net\",\n  \n  'content_type': 'product',\n\
+    \  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category':\
+    \ 'Boty | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity':\
+    \ 3,\n    'unit_price': 3718.18\n  }]\n};\n\n\nassertThat(SEM.length, 'Strange\
+    \ count of SEM calls, expected config -> updateUserData -> track PageView').isEqualTo(3);\n\
     assertThat(SEM[0].command, 'First command must be \"config\"').isEqualTo('config');\n\
     \nassertThat(SEM[1].command, 'Third command must be \"updateUserData\"').isEqualTo('updateUserData');\n\
     assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);\n\
@@ -1414,28 +1452,29 @@ scenarios:
     assertThat(SEM[2].name, 'Second command name must be \"Purchase\"').isEqualTo('Purchase');\n\
     assertThat(SEM[2].params, 'Event params are not same').isEqualTo(expectedParams);"
 - name: Event Params - Purchase - Enhanced Ecommerce
-  code: "mockData.eventName = 'Purchase';\nmockData.contentType = 'product';\nmockData.user\
-    \ = user;\nmockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name':\
-    \ \"Adidas Ultraboost\",\n  'price': 3718.18,\n  'fullPrice': 4499,\n  'quantity':\
-    \ 3,\n  'item_category': \"Boty\",\n  'item_category2': \"Sportovní boty\",\n\
-    \  'item_category3': \"Běžecké boty\",\n  'item_category4': false,\n  'item_category5':\
-    \ false\n}];\nmockData.order = {\n  'transaction_id': 'T_123',\n  'value': \"\
-    11154.54\",\n  'tax': \"3.60\",\n  'shipping': \"99\",\n  'shipping_tier': 'holub',\n\
-    \  'currency': \"CZK\",\n  'coupon': 'SUMMER_SALE',\n  'customer_type': 'new',\n\
-    \  'payment': 19\n};\n\nrunCode(mockData);\n\nlet expectedParams = {\n  \"currency\"\
-    :\"CZK\",\n  \n  \"order_id\": \"T_123\",\n  \"value\": 11154.54,\n  \"value_tax\"\
-    : 3.60,\n//  \"event_id\": \"Purchase__T_123\",\n  \"delivery_price\": 99,\n \
-    \ \"delivery_type\": \"holub\",\n  \n  'content_type': 'product',\n  'contents':\
-    \ [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category': 'Boty\
-    \ | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity': 3,\n\
-    \    'unit_price': 3718.18\n  }]\n};\n\n\nassertThat(SEM.length, 'Strange count\
-    \ of SEM calls, expected config -> updateUserData -> track PageView').isEqualTo(3);\n\
-    assertThat(SEM[0].command, 'First command must be \"config\"').isEqualTo('config');\n\
-    \nassertThat(SEM[1].command, 'Third command must be \"updateUserData\"').isEqualTo('updateUserData');\n\
-    assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);\n\
-    \nassertThat(SEM[2].command, 'Second command must be \"track\"').isEqualTo('track');\n\
-    assertThat(SEM[2].name, 'Second command name must be \"Purchase\"').isEqualTo('Purchase');\n\
-    assertThat(SEM[2].params, 'Event params are not same').isEqualTo(expectedParams);"
+  code: "mockData.eventName = 'Purchase';\nmockData.contentType = 'product';\nmockData.reviewEmail\
+    \ = 'pavel@sabatka.net';\nmockData.user = user;\nmockData.products = [{\n  'item_id':\
+    \ \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\",\n  'price': 3718.18,\n\
+    \  'fullPrice': 4499,\n  'quantity': 3,\n  'item_category': \"Boty\",\n  'item_category2':\
+    \ \"Sportovní boty\",\n  'item_category3': \"Běžecké boty\",\n  'item_category4':\
+    \ false,\n  'item_category5': false\n}];\nmockData.order = {\n  'transaction_id':\
+    \ 'T_123',\n  'value': \"11154.54\",\n  'tax': \"3.60\",\n  'shipping': \"99\"\
+    ,\n  'shipping_tier': 'holub',\n  'currency': \"CZK\",\n  'coupon': 'SUMMER_SALE',\n\
+    \  'customer_type': 'new',\n  'payment': 19\n};\n\nrunCode(mockData);\n\nlet expectedParams\
+    \ = {\n  \"currency\":\"CZK\",\n  \n  \"order_id\": \"T_123\",\n  \"value\": 11154.54,\n\
+    \  \"value_tax\": 3.60,\n//  \"event_id\": \"Purchase__T_123\",\n  \"delivery_price\"\
+    : 99,\n  \"delivery_type\": \"holub\",\n  \"review_email\": \"pavel@sabatka.net\"\
+    ,\n  \n  'content_type': 'product',\n  'contents': [{\n    'content_name': 'Adidas\
+    \ Ultraboost',\n    'content_category': 'Boty | Sportovní boty | Běžecké boty',\n\
+    \    'id': 'SKU_12345',\n    'quantity': 3,\n    'unit_price': 3718.18\n  }]\n\
+    };\n\n\nassertThat(SEM.length, 'Strange count of SEM calls, expected config ->\
+    \ updateUserData -> track PageView').isEqualTo(3);\nassertThat(SEM[0].command,\
+    \ 'First command must be \"config\"').isEqualTo('config');\n\nassertThat(SEM[1].command,\
+    \ 'Third command must be \"updateUserData\"').isEqualTo('updateUserData');\nassertThat(SEM[1].params,\
+    \ 'Event params are not same').isEqualTo(expectedUserParams);\n\nassertThat(SEM[2].command,\
+    \ 'Second command must be \"track\"').isEqualTo('track');\nassertThat(SEM[2].name,\
+    \ 'Second command name must be \"Purchase\"').isEqualTo('Purchase');\nassertThat(SEM[2].params,\
+    \ 'Event params are not same').isEqualTo(expectedParams);"
 - name: Event Params - Purchase - Zero value
   code: "mockData.eventName = 'Purchase';\nmockData.contentType = 'product';\nmockData.user\
     \ = user;\nmockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name':\
@@ -1524,7 +1563,9 @@ scenarios:
 
     let expectedParams = {
       "event_url": "https://www.sabatka.net/cs",
-      "content_name": "Seznam SEM template finally approved",
+      "contents": [{
+        "content_name": "Seznam SEM template finally approved",
+      }],
       "currency":"CZK"
     };
 
@@ -1601,6 +1642,25 @@ scenarios:
     assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);
 
     assertThat(SEM[2].command, 'Second command must be "track"').isEqualTo('track');
+- name: Event Params - ViewContent - Page
+  code: |-
+    mockData.eventName = 'ViewContent';
+    mockData.contentType = 'page';
+    mockData.contentName = "Šablona pro SEM";
+    mockData.contentCategory = "Nějaká kategorie / Podkategorie";
+
+    runCode(mockData);
+
+    let expectedParams = {
+      "currency": "CZK",
+      'content_type': 'page',
+      'contents': [{
+        'content_name': 'Šablona pro SEM',
+        'content_category': 'Nějaká kategorie / Podkategorie'
+      }]
+    };
+
+    assertHitWasSent('ViewContent', expectedParams);
 setup: "\n// --------- MOCK DATA ---------\nlet mockData = {\n  'id': 12345,\n  'eventName':\
   \ 'PageView',\n  'currency': 'CZK',\n  'usingConsentModeV2': true\n};\n\nlet consentStatus\
   \ = {\n  'ad_storage': 'granted',\n  'ad_personalization': 'granted',\n  'ad_user_data':\
