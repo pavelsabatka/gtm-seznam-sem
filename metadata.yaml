@@ -3,11 +3,14 @@ documentation: "https://www.sabatka.net/cs/seznam-sem-gtm-template/"
 
 versions:
   # Latest version
-  - sha: c3a3bc8c84d2ed1081d3df46cc4f3f28f2510087
-    changeNotes: fix of AddToCart
+  - sha: 34c4da616f14201425dbf92c2d3c99792728f1be
+    changeNotes: Added review_email, content_catgory
     
 
   # Older versions
+  - sha: c3a3bc8c84d2ed1081d3df46cc4f3f28f2510087
+    changeNotes: fix of AddToCart
+  
   - sha: 8715b44b4524b3a52cc6f9d32d06aa72ff6a2653
     changeNotes: "fixes based on github issues 2, 3, 4"
   
