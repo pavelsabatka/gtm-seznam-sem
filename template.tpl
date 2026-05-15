@@ -176,8 +176,8 @@ ___TEMPLATE_PARAMETERS___
         "enablingConditions": [
           {
             "paramName": "eventName",
-            "paramValue": "ViewContent",
-            "type": "EQUALS"
+            "paramValue": "Search",
+            "type": "NOT_EQUALS"
           }
         ]
       },
@@ -298,19 +298,19 @@ ___TEMPLATE_PARAMETERS___
       },
       {
         "type": "TEXT",
-        "name": "contentName",
-        "displayName": "Content Name (optional)",
-        "simpleValueType": true,
-        "enablingConditions": [],
-        "help": "String of contentName (e.g. in page title). Recommended for content_type \u003d page, product-level data should be used in \"Products\" field."
-      },
-      {
-        "type": "TEXT",
         "name": "contentCategory",
         "displayName": "Content Category (optional)",
         "simpleValueType": true,
         "enablingConditions": [],
         "help": "String of content category. Recommended for content_type \u003d page, product-level data should be used in \"Products\" field."
+      },
+      {
+        "type": "TEXT",
+        "name": "contentName",
+        "displayName": "Content Name (optional)",
+        "simpleValueType": true,
+        "enablingConditions": [],
+        "help": "String of contentName (e.g. in page title). Recommended for content_type \u003d page, product-level data should be used in \"Products\" field."
       },
       {
         "type": "TEXT",
@@ -448,7 +448,7 @@ const getContainerVersion = require('getContainerVersion');
 
 log('data =', data);
 
-const TEMPLATE_VERSION = '2.0';
+const TEMPLATE_VERSION = '2.1';
 
 
 /**
