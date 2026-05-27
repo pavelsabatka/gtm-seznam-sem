@@ -3,11 +3,14 @@ documentation: "https://www.sabatka.net/cs/seznam-sem-gtm-template/"
 
 versions:
   # Latest version
-  - sha: 8b687900859ee66f6d9859dfef5e7cb898fc1d43
-    changeNotes: Minor updates in content_type
+  - sha: d872f3d4a14288afdd92b56c23b8235d68032b7b
+    changeNotes: Content_type is set always when is available
     
 
   # Older versions
+  - sha: 8b687900859ee66f6d9859dfef5e7cb898fc1d43
+    changeNotes: Minor updates in content_type
+  
   - sha: 34c4da616f14201425dbf92c2d3c99792728f1be
     changeNotes: Added review_email, content_catgory
   
