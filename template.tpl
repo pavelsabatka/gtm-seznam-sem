@@ -448,7 +448,7 @@ const getContainerVersion = require('getContainerVersion');
 
 log('data =', data);
 
-const TEMPLATE_VERSION = '2.1';
+const TEMPLATE_VERSION = '2.2';
 
 
 /**
@@ -795,6 +795,9 @@ function getEventParams(eventName) {
   if (data.user && getType(data.user.registered) !== 'undefined') {
     params.status = !!data.user.registered;
   }
+  if (data.contentType) {
+    params.content_type = data.contentType;
+  }
   
   
   switch (eventName) {
@@ -843,7 +846,6 @@ function getEventParams(eventName) {
       break;
 
     case 'ViewContent':
-      params.content_type = data.contentType;
       if (data.contentType == 'product' || data.contentType == 'product_group') {
         const prods = prepareProducts();
         if (prods.length) params.contents = prods;
