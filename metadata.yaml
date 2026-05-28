@@ -3,11 +3,14 @@ documentation: "https://www.sabatka.net/cs/seznam-sem-gtm-template/"
 
 versions:
   # Latest version
-  - sha: d872f3d4a14288afdd92b56c23b8235d68032b7b
-    changeNotes: Content_type is set always when is available
+  - sha: ab46f01e265a85fd85d2091abf40ff804340d02c
+    changeNotes: user object and content_type are optional
     
 
   # Older versions
+  - sha: d872f3d4a14288afdd92b56c23b8235d68032b7b
+    changeNotes: Content_type is set always when is available
+
   - sha: 8b687900859ee66f6d9859dfef5e7cb898fc1d43
     changeNotes: Minor updates in content_type
   
