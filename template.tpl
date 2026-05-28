@@ -145,12 +145,12 @@ ___TEMPLATE_PARAMETERS___
       {
         "type": "SELECT",
         "name": "user",
-        "displayName": "User",
+        "displayName": "User (optional)",
         "macrosInSelect": true,
         "selectItems": [],
         "simpleValueType": true,
         "help": "Object of User",
-        "enablingConditions": []
+        "notSetText": ""
       },
       {
         "type": "SELECT",
@@ -179,7 +179,9 @@ ___TEMPLATE_PARAMETERS___
             "paramValue": "Search",
             "type": "NOT_EQUALS"
           }
-        ]
+        ],
+        "notSetText": "",
+        "defaultValue": "product"
       },
       {
         "type": "SELECT",
