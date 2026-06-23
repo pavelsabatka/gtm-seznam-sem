@@ -144,16 +144,6 @@ ___TEMPLATE_PARAMETERS___
     "subParams": [
       {
         "type": "SELECT",
-        "name": "user",
-        "displayName": "User (optional)",
-        "macrosInSelect": true,
-        "selectItems": [],
-        "simpleValueType": true,
-        "help": "Object of User",
-        "notSetText": ""
-      },
-      {
-        "type": "SELECT",
         "name": "contentType",
         "displayName": "Content Type",
         "macrosInSelect": false,
@@ -399,6 +389,38 @@ ___TEMPLATE_PARAMETERS___
   },
   {
     "type": "GROUP",
+    "name": "userDataGroup",
+    "displayName": "User Data",
+    "groupStyle": "ZIPPY_OPEN_ON_PARAM",
+    "subParams": [
+      {
+        "type": "SELECT",
+        "name": "user",
+        "displayName": "User (optional)",
+        "macrosInSelect": true,
+        "selectItems": [],
+        "simpleValueType": true,
+        "help": "Object of User",
+        "notSetText": ""
+      },
+      {
+        "type": "TEXT",
+        "name": "userEmail",
+        "displayName": "Email (em)",
+        "simpleValueType": true,
+        "help": "Expected normalized email (lowercased and trimmed)."
+      },
+      {
+        "type": "TEXT",
+        "name": "userPhone",
+        "displayName": "Phone (ph)",
+        "simpleValueType": true,
+        "help": "Expected the phone in E.164 format (e.g. +420777111222)"
+      }
+    ]
+  },
+  {
+    "type": "GROUP",
     "name": "consent",
     "displayName": "Consent",
     "groupStyle": "ZIPPY_OPEN_ON_PARAM",
@@ -450,7 +472,7 @@ const getContainerVersion = require('getContainerVersion');
 
 log('data =', data);
 
-const TEMPLATE_VERSION = '2.2';
+const TEMPLATE_VERSION = '2.3';
 
 
 /**
@@ -712,8 +734,8 @@ function countProductValue(products) {
 function getUserData() {
   const user = data.user || {};
   let userData = {
-    'em': user.email || user.em,
-    'ph': user.phone || user.ph,
+    'em': data.userEmail || user.email || user.em,
+    'ph': data.userPhone || user.phone || user.ph,
     'fn': user.fname || user.fn,
     'ln': user.lname || user.ln,
     'ge': user.g || user.ge || user.gender,
@@ -751,7 +773,18 @@ function getUserData() {
  */
 function isUserUpdateNeeded(newUserData) {
   if (!newUserData) return false;
-  
+
+  // No update needed if none of the values is defined
+  const keys = Object.keys(newUserData);
+  let hasValue = false;
+  for (let i = 0; i < keys.length; i++) {
+    if (isDefined(newUserData[keys[i]])) {
+      hasValue = true;
+      break;
+    }
+  }
+  if (!hasValue) return false;
+
   const oldUserData = templateStorage.getItem('USER_DATA');
   if (!oldUserData) return true;
 
@@ -1001,19 +1034,19 @@ function updateUserData() {
 
 
 /* *********** LOAD SCRIPT & INIT SENDING *********** */
-if (!templateStorage.getItem('SCRIPT_INITED')) {
-  templateStorage.setItem('SCRIPT_INITED', true);
+if (!templateStorage.getItem('SCRIPT_INITED_'+data.id)) {
+  templateStorage.setItem('SCRIPT_INITED_'+data.id, true);
   injectScript('https://l.seznam.cz/sul.js?id='+data.id,
     () => {
       log('Seznam SEM: javascript library was loaded successfully');
-      templateStorage.setItem('SCRIPT_LOADED', true);
+      templateStorage.setItem('SCRIPT_LOADED_'+data.id, true);
       callSEMConfig();
       flushScriptLoadQueue();
       data.gtmOnSuccess();
     },
     () => {
       log('Seznam SEM: javascript library cannot be loaded');
-      templateStorage.setItem('SCRIPT_INITED', false);
+      templateStorage.setItem('SCRIPT_INITED_'+data.id, false);
       data.gtmOnFailure();
     }
   );
@@ -1025,15 +1058,12 @@ const eventName = data.eventName;
 const eventParams = getEventParams(eventName);
 
 
-let isUserUpdateNeed = false;
-if (data.user) {
-  let userData = getUserData();
-  isUserUpdateNeed = isUserUpdateNeeded(userData);
-  templateStorage.setItem('USER_DATA', userData);
-}
+let userData = getUserData();
+let isUserUpdateNeed = isUserUpdateNeeded(userData);
+templateStorage.setItem('USER_DATA', userData);
 
 
-if (!templateStorage.getItem('SCRIPT_LOADED')) {
+if (!templateStorage.getItem('SCRIPT_LOADED_'+data.id)) {
   // script is not loaded yet -> add to queue
   pushToScriptLoadQueue(eventName, eventParams);
   
@@ -1607,6 +1637,29 @@ scenarios:
       "country":"CZ",
       "db":"19800823",
       "subscription_id":"subscription123",
+      'em': "pavel@sabatka.net",
+      'ph': "+420111222333",
+    };
+
+    assertThat(SEM.length, 'Strange count of SEM calls, expected config -> track PageView -> updateUserData').isEqualTo(3);
+    assertThat(SEM[0].command, 'First command must be "config"').isEqualTo('config');
+    assertThat(SEM[1].command, 'Second command must be "track"').isEqualTo('track');
+    assertThat(SEM[2].command, 'Third command must be "updateUserData"').isEqualTo('updateUserData');
+    assertThat(SEM[2].params, 'Event params are not same').isEqualTo(expectedParams);
+- name: Update User Data - Email and Phone
+  code: |-
+    // run first event
+    runCode(mockData);
+
+
+    mockData.eventName = 'updateUserData';
+
+    mockData.userEmail = "pavel@sabatka.net";
+    mockData.userPhone = "+420111222333";
+
+    runCode(mockData);
+
+    var expectedParams = {
       'em': "pavel@sabatka.net",
       'ph': "+420111222333",
     };
