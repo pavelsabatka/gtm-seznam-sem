@@ -51,7 +51,7 @@ ___TEMPLATE_PARAMETERS___
     "type": "SELECT",
     "name": "eventName",
     "displayName": "Event Name",
-    "macrosInSelect": false,
+    "macrosInSelect": true,
     "selectItems": [
       {
         "value": "AddPaymentInfo",
@@ -644,7 +644,7 @@ function callSEMConfig() {
   };
 
   // add user data - if we have consent
-  let userData = templateStorage.setItem('USER_DATA');
+  let userData = templateStorage.getItem('USER_DATA');
   if (userData && isConsentGranted('ad_user_data')) {
     configData.user_ids = {
       'user_data': userData
@@ -1018,14 +1018,13 @@ function resolveCommand(eventName, eventParams) {
 
 /**
  * Calls updateUserData on SEM
- * This method is async due to SHA256 hashing
  *
  * @return void
  */
 function updateUserData() {
   let userData = templateStorage.getItem('USER_DATA');
   if (!userData) return;
-  log('Seznam SEM: updating user data with params', userData);
+  log('Seznam SEM: calling updateUserData with param', userData);
   callInWindow('SEM', 'updateUserData', userData);
 }
 
@@ -1041,8 +1040,8 @@ if (!templateStorage.getItem('SCRIPT_INITED_'+data.id)) {
       log('Seznam SEM: javascript library was loaded successfully');
       templateStorage.setItem('SCRIPT_LOADED_'+data.id, true);
       callSEMConfig();
+      updateUserData();
       flushScriptLoadQueue();
-      data.gtmOnSuccess();
     },
     () => {
       log('Seznam SEM: javascript library cannot be loaded');
@@ -1060,7 +1059,7 @@ const eventParams = getEventParams(eventName);
 
 let userData = getUserData();
 let isUserUpdateNeed = isUserUpdateNeeded(userData);
-templateStorage.setItem('USER_DATA', userData);
+if (isUserUpdateNeed) templateStorage.setItem('USER_DATA', userData);
 
 
 if (!templateStorage.getItem('SCRIPT_LOADED_'+data.id)) {
@@ -1074,8 +1073,9 @@ if (!templateStorage.getItem('SCRIPT_LOADED_'+data.id)) {
   }
 
   resolveCommand(eventName, eventParams);
-  data.gtmOnSuccess();
 }
+
+data.gtmOnSuccess();
 
 
 ___WEB_PERMISSIONS___
