@@ -3,11 +3,15 @@ documentation: "https://www.sabatka.net/cs/seznam-sem-gtm-template/"
 
 versions:
   # Latest version  
-  - sha: 34ae1be27d9b32f1577a3d61307dfc0fc89c02ab
-    changeNotes: add fields for email and phone, support for multiple IDs
+
+  - sha: d29bb8bcacaab7b414bd00afc37f4e16702bc998
+    changeNotes: update userData handling, enabled vars in event names
     
 
   # Older versions
+  - sha: 34ae1be27d9b32f1577a3d61307dfc0fc89c02ab
+    changeNotes: add fields for email and phone, support for multiple IDs
+
   - sha: b49a0f922a6d76155d352838065147208e7e17b7
     changeNotes: minify template icon
   

@@ -472,7 +472,7 @@ const getContainerVersion = require('getContainerVersion');
 
 log('data =', data);
 
-const TEMPLATE_VERSION = '2.3';
+const TEMPLATE_VERSION = '2.5';
 
 
 /**
@@ -669,16 +669,16 @@ function prepareProducts(validate) {
   let prepared = [],
       category;
   
-  
   for (let i in products) {
     category = [];
     if (products[i].category) {
-      // support for MeasureHive
+      // support for MeasureGuard
       category = products[i].category.split('/');
 
     } else if (products[i].currentCategory || products[i].defaultCategory) {
       // support for Shoptet
       category = products[i].currentCategory || products[i].defaultCategory;
+      category = category.split(' | ');
 
     } else {
       // support for Enhancend Ecommerce
@@ -688,7 +688,7 @@ function prepareProducts(validate) {
       if (products[i].item_category4) category.push(products[i].item_category4);
       if (products[i].item_category5) category.push(products[i].item_category5);
     }
-    
+
     const p = {
       'id': getFirstValue([products[i].id, products[i].item_id], 'string'),
       'content_name': getFirstValue([products[i].name, products[i].item_name], 'string'),
@@ -926,7 +926,7 @@ function getEventParams(eventName) {
     case 'Subscribe':
       let possibleValues = [data.predictedLtv];
       if (data.user) {
-        possibleValues = possibleValues.merge([data.user.predictedLTV, data.user.predicted_ltv, data.user.ltv]);
+        possibleValues = possibleValues.concat([data.user.predictedLTV, data.user.predicted_ltv, data.user.ltv]);
       }
 
       let ltv = getFirstValue(possibleValues, 'number');
@@ -1530,7 +1530,26 @@ scenarios:
     \nassertThat(SEM[2].command, 'Second command must be \"track\"').isEqualTo('track');\n\
     assertThat(SEM[2].name, 'Second command name must be \"Purchase\"').isEqualTo('Purchase');\n\
     assertThat(SEM[2].params, 'Event params are not same').isEqualTo(expectedParams);"
-- name: Event Params - ViewContent
+- name: Event Params - ViewContent - Page
+  code: |-
+    mockData.eventName = 'ViewContent';
+    mockData.contentType = 'page';
+    mockData.contentName = "Šablona pro SEM";
+    mockData.contentCategory = "Nějaká kategorie / Podkategorie";
+
+    runCode(mockData);
+
+    let expectedParams = {
+      "currency": "CZK",
+      'content_type': 'page',
+      'contents': [{
+        'content_name': 'Šablona pro SEM',
+        'content_category': 'Nějaká kategorie / Podkategorie'
+      }]
+    };
+
+    assertHitWasSent('ViewContent', expectedParams);
+- name: Event Params - ViewContent - Product
   code: "mockData.eventName = 'ViewContent';\nmockData.contentType = 'product';\n\
     mockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\"\
     ,\n  'price': 3718.18,\n  'fullPrice': 4499,\n  'quantity': 1,\n  'item_category':\
@@ -1541,6 +1560,16 @@ scenarios:
     \ 'Adidas Ultraboost',\n    'content_category': 'Boty | Sportovní boty | Běžecké\
     \ boty',\n    'id': 'SKU_12345',\n    'quantity': 1,\n    'unit_price': 3718.18\n\
     \  }]\n};\n\nassertHitWasSent('ViewContent', expectedParams);"
+- name: Event Params - ViewContent - Shoptet Product
+  code: "mockData.eventName = 'ViewContent';\nmockData.contentType = 'product';\n\
+    mockData.products = [{\n  'id': 12345,\n  'name': \"Adidas Ultraboost\",\n  'priceWithVat':\
+    \ 3718.18,\n  'currentCategory': \"Boty | Sportovní boty | Běžecké boty\",\n \
+    \ 'defaultCategory': \"Boty | Sportovní boty | Běžecké boty\",\n  'manufacturer':\
+    \ 'Adidas',\n  'currency': 'CZK',\n}];\n\nrunCode(mockData);\n\nlet expectedParams\
+    \ = {\n  \"currency\":\"CZK\",\n  'value': 3718.18,\n  \n  'content_type': 'product',\n\
+    \  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category':\
+    \ 'Boty | Sportovní boty | Běžecké boty',\n    'id': '12345',\n    'quantity':\
+    \ 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('ViewContent', expectedParams);"
 - name: Event Params - AddToCart
   code: "mockData.eventName = 'AddToCart';\nmockData.contentType = 'product';\nmockData.products\
     \ = [{\n  'item_id': \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\",\n \
@@ -1604,6 +1633,41 @@ scenarios:
     };
 
     assertHitWasSent('PageView', expectedParams, 'ARTICLE_123');
+- name: Event Params - StartTrial - From Fields
+  code: |-
+    mockData.eventName = 'StartTrial';
+
+    // added user data
+    mockData.predictedLtv = 88.99;
+    mockData.value = 11.22;
+
+    runCode(mockData);
+
+    let expectedParams = {
+      "currency":"CZK",
+      "value": 11.22,
+      "predicted_ltv": 88.99
+    };
+
+
+    assertHitWasSent('StartTrial', expectedParams);
+- name: Event Params - StartTrial - From User Data
+  code: |-
+    mockData.eventName = 'StartTrial';
+
+    // added user data
+    mockData.user = user;
+    mockData.value = 11.22;
+
+    runCode(mockData);
+
+    let expectedParams = {
+      "currency":"CZK",
+      "value": 11.22
+    };
+
+    assertThat(SEM[SEM.length-1].command, 'Second command must be "track"').isEqualTo('track');
+    assertThat(SEM[SEM.length-1].params, 'Event params are not same').isEqualTo(expectedParams);
 - name: Custom Params
   code: |-
     mockData.customParams = [{"name":"foo","value":"bar"}];
@@ -1699,25 +1763,6 @@ scenarios:
     assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);
 
     assertThat(SEM[2].command, 'Second command must be "track"').isEqualTo('track');
-- name: Event Params - ViewContent - Page
-  code: |-
-    mockData.eventName = 'ViewContent';
-    mockData.contentType = 'page';
-    mockData.contentName = "Šablona pro SEM";
-    mockData.contentCategory = "Nějaká kategorie / Podkategorie";
-
-    runCode(mockData);
-
-    let expectedParams = {
-      "currency": "CZK",
-      'content_type': 'page',
-      'contents': [{
-        'content_name': 'Šablona pro SEM',
-        'content_category': 'Nějaká kategorie / Podkategorie'
-      }]
-    };
-
-    assertHitWasSent('ViewContent', expectedParams);
 setup: "\n// --------- MOCK DATA ---------\nlet mockData = {\n  'id': 12345,\n  'eventName':\
   \ 'PageView',\n  'currency': 'CZK',\n  'usingConsentModeV2': true\n};\n\nlet consentStatus\
   \ = {\n  'ad_storage': 'granted',\n  'ad_personalization': 'granted',\n  'ad_user_data':\
