@@ -4,11 +4,14 @@ documentation: "https://www.sabatka.net/cs/seznam-sem-gtm-template/"
 versions:
   # Latest version  
 
-  - sha: 5e701435c5e97698bc7e86a50171a0ed5700a25f
-    changeNotes: "v2.5: fixes in start trial event, shoptet support"
+  - sha: dc07340e27f50b4a7adc6f4c138549f6a9343b5f
+    changeNotes: "v2.6: Minor updates: products are not required"
     
 
   # Older versions
+  - sha: 5e701435c5e97698bc7e86a50171a0ed5700a25f
+    changeNotes: "v2.5: fixes in start trial event, shoptet support"
+
   - sha: d29bb8bcacaab7b414bd00afc37f4e16702bc998
     changeNotes: update userData handling, enabled vars in event names
 
