@@ -473,7 +473,7 @@ const getContainerVersion = require('getContainerVersion');
 
 log('data =', data);
 
-const TEMPLATE_VERSION = '2.5';
+const TEMPLATE_VERSION = '2.6';
 
 
 /**
