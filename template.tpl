@@ -222,7 +222,8 @@ ___TEMPLATE_PARAMETERS___
             "paramValue": "CustomizeProduct",
             "type": "EQUALS"
           }
-        ]
+        ],
+        "notSetText": "No products"
       },
       {
         "type": "SELECT",
@@ -1042,6 +1043,7 @@ if (!templateStorage.getItem('SCRIPT_INITED_'+data.id)) {
       callSEMConfig();
       updateUserData();
       flushScriptLoadQueue();
+      data.gtmOnSuccess();
     },
     () => {
       log('Seznam SEM: javascript library cannot be loaded');
@@ -1603,36 +1605,6 @@ scenarios:
     \    'content_category': 'Boty | Sportovní boty | Běžecké boty',\n    'id': '12345',\n\
     \    'quantity': 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('AddToCart',\
     \ expectedParams);"
-- name: Event Params - Search
-  code: "mockData.eventName = 'Search';\nmockData.contentType = 'search';\nmockData.searchString\
-    \ = 'Adidas Ultra';\nmockData.searchResultCount = 1;\nmockData.products = [{\n\
-    \  'item_id': \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\",\n  'price':\
-    \ 3718.18,\n  'fullPrice': 4499,\n  'quantity': 1,\n  'item_category': \"Boty\"\
-    ,\n  'item_category2': \"Sportovní boty\",\n  'item_category3': \"Běžecké boty\"\
-    ,\n  'item_category4': false,\n  'item_category5': false\n}];\n\nrunCode(mockData);\n\
-    \nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \"value\":3718.18,\n  \n\
-    \  'content_type': 'search',\n//  'num_items': 1,\n  'search_string': 'Adidas\
-    \ Ultra',\n  \n  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n  \
-    \  'content_category': 'Boty | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n\
-    \    'quantity': 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('Search',\
-    \ expectedParams);"
-- name: Event Params - Optional
-  code: |-
-    mockData.url = 'https://www.sabatka.net/cs';
-    mockData.eventId = 'ARTICLE_123';
-    mockData.contentName = 'Seznam SEM template finally approved';
-
-    runCode(mockData);
-
-    let expectedParams = {
-      "event_url": "https://www.sabatka.net/cs",
-      "contents": [{
-        "content_name": "Seznam SEM template finally approved",
-      }],
-      "currency":"CZK"
-    };
-
-    assertHitWasSent('PageView', expectedParams, 'ARTICLE_123');
 - name: Event Params - StartTrial - From Fields
   code: |-
     mockData.eventName = 'StartTrial';
@@ -1668,6 +1640,51 @@ scenarios:
 
     assertThat(SEM[SEM.length-1].command, 'Second command must be "track"').isEqualTo('track');
     assertThat(SEM[SEM.length-1].params, 'Event params are not same').isEqualTo(expectedParams);
+- name: Event Params - InitiateCheckout
+  code: |-
+    mockData.eventName = 'InitiateCheckout';
+    mockData.contentType = 'product';
+
+    runCode(mockData);
+
+    let expectedParams = {
+      "currency":"CZK",
+      'content_type': 'product',
+      'contents': [],
+      'value': 0
+    };
+
+    assertHitWasSent('InitiateCheckout', expectedParams);
+- name: Event Params - Search
+  code: "mockData.eventName = 'Search';\nmockData.contentType = 'search';\nmockData.searchString\
+    \ = 'Adidas Ultra';\nmockData.searchResultCount = 1;\nmockData.products = [{\n\
+    \  'item_id': \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\",\n  'price':\
+    \ 3718.18,\n  'fullPrice': 4499,\n  'quantity': 1,\n  'item_category': \"Boty\"\
+    ,\n  'item_category2': \"Sportovní boty\",\n  'item_category3': \"Běžecké boty\"\
+    ,\n  'item_category4': false,\n  'item_category5': false\n}];\n\nrunCode(mockData);\n\
+    \nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \"value\":3718.18,\n  \n\
+    \  'content_type': 'search',\n//  'num_items': 1,\n  'search_string': 'Adidas\
+    \ Ultra',\n  \n  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n  \
+    \  'content_category': 'Boty | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n\
+    \    'quantity': 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('Search',\
+    \ expectedParams);"
+- name: Event Params - Optional
+  code: |-
+    mockData.url = 'https://www.sabatka.net/cs';
+    mockData.eventId = 'ARTICLE_123';
+    mockData.contentName = 'Seznam SEM template finally approved';
+
+    runCode(mockData);
+
+    let expectedParams = {
+      "event_url": "https://www.sabatka.net/cs",
+      "contents": [{
+        "content_name": "Seznam SEM template finally approved",
+      }],
+      "currency":"CZK"
+    };
+
+    assertHitWasSent('PageView', expectedParams, 'ARTICLE_123');
 - name: Custom Params
   code: |-
     mockData.customParams = [{"name":"foo","value":"bar"}];
