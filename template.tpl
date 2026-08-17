@@ -473,7 +473,7 @@ const getContainerVersion = require('getContainerVersion');
 
 log('data =', data);
 
-const TEMPLATE_VERSION = '2.6';
+const TEMPLATE_VERSION = '2.7';
 
 
 /**
@@ -698,7 +698,7 @@ function prepareProducts(validate) {
       'content_category': category.join(' | ')
     };
     if (validate) {
-      if (!p.id || !p.content_name || !p.quantity || !p.unit_price) {
+      if (!isDefined(p.id) || !p.content_name || !p.quantity || !isDefined(p.unit_price)) {
         log('Seznam SEM: ERROR: product must have keys id, content_name, quantity, unit_price; current value', p);
       }
     }
