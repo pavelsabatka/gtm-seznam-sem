@@ -4,11 +4,14 @@ documentation: "https://www.sabatka.net/cs/seznam-sem-gtm-template/"
 versions:
   # Latest version  
 
-  - sha: ba193eaaffa0f1cb2980f3a2d3d601ccfb85ed39
-    changeNotes: "v2.7: Update product assert warnings - accepts unit_price=0"
+  - sha: e72cdd6a932a82f5c9f176b525e04447a4dcb1ac
+    changeNotes: "v2.8: Major refactoring and bugfixes - script loading, consents, evaluating product values"
     
 
   # Older versions
+  - sha: ba193eaaffa0f1cb2980f3a2d3d601ccfb85ed39
+    changeNotes: "v2.7: Update product assert warnings - accepts unit_price=0"
+  
   - sha: dc07340e27f50b4a7adc6f4c138549f6a9343b5f
     changeNotes: "v2.6: Minor updates: products are not required"
   
