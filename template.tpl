@@ -22,7 +22,7 @@ ___INFO___
   "brand": {
     "id": "github.com_pavelsabatka",
     "displayName": "pavelsabatka",
-    "thumbnail": "data:image/jpeg;base64,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\u003d"
+    "thumbnail": "data:image/jpeg;base64,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\u003d"
   },
   "description": "Seznam SEM tracking.\nRemarketing and conversion tracking code for Seznam.cz. SEM is available from 04/2026.",
   "containerContexts": [
@@ -216,11 +216,6 @@ ___TEMPLATE_PARAMETERS___
             "paramName": "eventName",
             "paramValue": "ViewContent",
             "type": "EQUALS"
-          },
-          {
-            "paramName": "eventName",
-            "paramValue": "CustomizeProduct",
-            "type": "EQUALS"
           }
         ],
         "notSetText": "No products"
@@ -308,7 +303,7 @@ ___TEMPLATE_PARAMETERS___
       {
         "type": "TEXT",
         "name": "value",
-        "displayName": "Value (optional)",
+        "displayName": "Value (recommended, without VAT)",
         "simpleValueType": true,
         "help": "Optional. Used as value parameter."
       },
@@ -325,20 +320,6 @@ ___TEMPLATE_PARAMETERS___
           }
         ],
         "help": "Only for Search event"
-      },
-      {
-        "type": "TEXT",
-        "name": "searchResultCount",
-        "displayName": "Count of Search Results",
-        "simpleValueType": true,
-        "help": "Only for Search event",
-        "enablingConditions": [
-          {
-            "paramName": "eventName",
-            "paramValue": "Search",
-            "type": "EQUALS"
-          }
-        ]
       },
       {
         "type": "TEXT",
@@ -471,44 +452,21 @@ const getType = require('getType');
 const Object = require('Object');
 const getContainerVersion = require('getContainerVersion');
 
-log('data =', data);
-
-const TEMPLATE_VERSION = '2.7';
 
 
-/**
- * Reads all queued hits and send them to SEM object
- *
- * @return void
- */
-function flushScriptLoadQueue() {
-  let events = templateStorage.getItem('EVENT_QUEUE_SCRIPT_LOAD') || [];
-  for (const key in events) {
-    resolveCommand(events[key].name, events[key].params);
-  }
-  
-  // clear queue
-  templateStorage.setItem('EVENT_QUEUE_SCRIPT_LOAD', []);
-}
+const TEMPLATE_VERSION = '2.8';
 
 
 
 /**
- * Adds hit data to script load queue
- * This queue will be flushed when script will be loaded
- * 
- * @param string eventName
- * @param string eventParams
- * @return void
+ * Constant definition
  */
-function pushToScriptLoadQueue(eventName, eventParams) {
-  let q = templateStorage.getItem('EVENT_QUEUE_SCRIPT_LOAD') || [];
-  q.push({
-    'name': eventName,
-    'params': eventParams
-  });
-  templateStorage.setItem('EVENT_QUEUE_SCRIPT_LOAD', q);
-}
+const CACHE_TOKEN = 'seznam_sem_' + data.id;
+const CONFIG_WAS_CALLED = 'CONFIG_WAS_CALLED_'+data.id;
+const LAST_SEM_CONSENT_SNAPSHOT = 'LAST_SEM_CONSENT_SNAPSHOT_'+data.id;
+const CONSENT_LISTENERS_INITED = 'CONSENT_LISTENERS_INITED_'+data.id;
+const USER_DATA = 'USER_DATA_'+data.id;
+
 
 
 
@@ -580,7 +538,7 @@ function getConsentObject() {
       'functionality_storage': isConsentGranted('functionality_storage') ? 'granted' : 'denied',
     };
   } else {
-    let consents = data.consentStateObject;
+    let consents = data.consentStateObject || {};
     return {
       'ad_storage': getConsentStatus(consents.ad_storage),
       'ad_user_data': getConsentStatus(consents.ad_user_data),
@@ -599,28 +557,30 @@ function getConsentObject() {
  * @return object params
  */
 function callSEMConfig() {
+
+  const consentStatus = getConsentObject();
   
-  const adStorage = isConsentGranted('ad_storage') ? '1' : '0';
-  const adPersonalization = isConsentGranted('ad_personalization') ? '1' : '0';
-  const adUserData = isConsentGranted('ad_user_data') ? '1' : '0';
+  const adStorage = consentStatus.ad_storage === 'granted' ? '1' : '0';
+  const adPersonalization = consentStatus.ad_personalization === 'granted' ? '1' : '0';
+  const adUserData = consentStatus.ad_user_data === 'granted' ? '1' : '0';
   const currentConsentSnapshot = adStorage + adPersonalization + adUserData;
-  const lastConsentSnapshot = templateStorage.getItem('LAST_SEM_CONSENT_SNAPSHOT');
+  const lastConsentSnapshot = templateStorage.getItem(LAST_SEM_CONSENT_SNAPSHOT);
   
   
   if (currentConsentSnapshot === lastConsentSnapshot) {
     // Pokud už jsou listenery nastaveny, prostě vyskočíme
-    if (templateStorage.getItem('CONSENT_LISTENERS_INITED') && templateStorage.getItem('CONFIG_WAS_CALLED')) {
+    if (templateStorage.getItem(CONSENT_LISTENERS_INITED) && templateStorage.getItem(CONFIG_WAS_CALLED)) {
       return;
     }
   }
   
-  templateStorage.setItem('CONFIG_WAS_CALLED', true);
-  templateStorage.setItem('LAST_SEM_CONSENT_SNAPSHOT', currentConsentSnapshot);
+  templateStorage.setItem(CONFIG_WAS_CALLED, true);
+  templateStorage.setItem(LAST_SEM_CONSENT_SNAPSHOT, currentConsentSnapshot);
   
   
   // init consent listeners
-  if (!templateStorage.getItem('CONSENT_LISTENERS_INITED')) {
-    templateStorage.setItem('CONSENT_LISTENERS_INITED', true);
+  if (!templateStorage.getItem(CONSENT_LISTENERS_INITED)) {
+    templateStorage.setItem(CONSENT_LISTENERS_INITED, true);
     addConsentListener('ad_storage', callSEMConfig);
     addConsentListener('ad_personalization', callSEMConfig);
     addConsentListener('ad_user_data', callSEMConfig);
@@ -632,11 +592,11 @@ function callSEMConfig() {
     'event_type': 'rtgconv',
     'event_source': 'web',
     'consent_mode': {
-      'ad_storage': isConsentGranted('ad_storage') ? 'granted' : 'denied',
-      'ad_user_data': isConsentGranted('ad_user_data') ? 'granted' : 'denied',
-      'ad_personalization': isConsentGranted('ad_personalization') ? 'granted' : 'denied',
-      'analytics_storage': isConsentGranted('analytics_storage') ? 'granted' : 'denied',
-      'functionality_storage': isConsentGranted('functionality_storage') ? 'granted' : 'denied',
+      'ad_storage': consentStatus.ad_storage,
+      'ad_user_data': consentStatus.ad_user_data,
+      'ad_personalization': consentStatus.ad_personalization,
+      'analytics_storage': consentStatus.analytics_storage,
+      'functionality_storage': consentStatus.functionality_storage,
     },
     'api': {
       'name': 'GTM_T',
@@ -645,8 +605,8 @@ function callSEMConfig() {
   };
 
   // add user data - if we have consent
-  let userData = templateStorage.getItem('USER_DATA');
-  if (userData && isConsentGranted('ad_user_data')) {
+  let userData = templateStorage.getItem(USER_DATA);
+  if (userData && consentStatus.ad_user_data === 'granted') {
     configData.user_ids = {
       'user_data': userData
     };
@@ -654,6 +614,18 @@ function callSEMConfig() {
 
   log('Seznam SEM: called config with params', configData);
   callInWindow('SEM', 'config', configData);
+}
+
+
+
+/**
+ * Rounds a price to 2 decimals; returns undefined for anything unusable
+ */
+function toPrice(val) {
+  if (!isDefined(val)) return undefined;
+  const n = makeNumber(val);
+  if (n !== n) return undefined; // NaN check, the sandbox has no isNaN
+  return Math.round(n * 100) / 100;
 }
 
 
@@ -694,7 +666,7 @@ function prepareProducts(validate) {
       'id': getFirstValue([products[i].id, products[i].item_id], 'string'),
       'content_name': getFirstValue([products[i].name, products[i].item_name], 'string'),
       'quantity': getFirstValue([products[i].quantity, 1], 'integer'),
-      'unit_price': Math.round(100 * (getFirstValue([products[i].price, products[i].priceWithVat, products[i].fullPrice], 'number'))) / 100,
+      'unit_price': toPrice(getFirstValue([products[i].price, products[i].priceWithVat, products[i].fullPrice], 'number')),
       'content_category': category.join(' | ')
     };
     if (validate) {
@@ -786,7 +758,7 @@ function isUserUpdateNeeded(newUserData) {
   }
   if (!hasValue) return false;
 
-  const oldUserData = templateStorage.getItem('USER_DATA');
+  const oldUserData = templateStorage.getItem(USER_DATA);
   if (!oldUserData) return true;
 
   const newKeys = Object.keys(newUserData);
@@ -812,13 +784,24 @@ function isUserUpdateNeeded(newUserData) {
 
 
 /**
+ * Assigns value to params[key] only when the value is usable
+ * @param params
+ * @param string key of value
+ * @param value
+ */
+function setIfDefined(params, key, value) {
+  if (isDefined(value)) params[key] = value;
+}
+
+
+
+/**
  * Create params object for given event
  *
  * @return object params
  */
 function getEventParams(eventName) {
   const order = data.order || {};
-  const products = data.products || []; 
   
   let params = {};
   
@@ -842,30 +825,14 @@ function getEventParams(eventName) {
 
     case 'Purchase':
       params.order_id = getFirstValue([order.transaction_id, order.id, order.orderNo], 'string');
-      params.value_tax = getFirstValue([order.tax, order.value_tax], 'number');
-      params.delivery_price = getFirstValue([order.shipping, order.shipping_price, order.delivery_price], 'number');
-      params.delivery_type = getFirstValue([order.shipping_tier, order.shipping_type, order.delivery_type], 'string');
-      params.payment_type = getFirstValue([order.payment_type], 'string');      
       params.content_type = 'product';
       params.contents = prepareProducts(true);
-      
-      if (data.reviewEmail) {
-        params.review_email = data.reviewEmail;
-      }
-
-      
-      if (isDefined(data.value)) {
-        params.value = data.value;
-      } else if (isDefined(order.value)) {
-        params.value = order.value;
-      } else if (isDefined(order.revenue)) {
-        params.value = order.revenue;
-      } else {
-        params.value = order.totalWithoutVat;
-      }
-      if (!isDefined(params.value)) {
-        params.value = countProductValue(params.contents);
-      }
+      setIfDefined(params, 'value_tax', getFirstValue([order.tax, order.value_tax], 'number'));
+      setIfDefined(params, 'payment_type', order.payment_type);
+      setIfDefined(params, 'review_email', data.reviewEmail);
+      setIfDefined(params, 'delivery_price', getFirstValue([order.shipping, order.shipping_price, order.delivery_price], 'number'));
+      setIfDefined(params, 'delivery_type', getFirstValue([order.shipping_tier, order.shipping_type, order.delivery_type], 'string'));
+      setIfDefined(params, 'value', getFirstValue([data.value, order.value, order.revenue, order.totalWithoutVat, countProductValue(params.contents)], 'number'));
       
       if (!params.order_id) {
         log('Seznam SEM: ERROR: order ID must be set in event Purchase, got ', params.order_id, '. Use key transaction_id, id or orderNo in object', order);
@@ -895,7 +862,8 @@ function getEventParams(eventName) {
     case 'AddToWishlist':
       params.content_type = 'product';
       params.contents = prepareProducts();
-      params.value = countProductValue(params.contents);
+      params.value = data.value;
+      if (!params.value) params.value = countProductValue(params.contents);
       break;
 
     case 'AddToCart':
@@ -904,9 +872,7 @@ function getEventParams(eventName) {
       params.content_type = 'product';
       params.contents = prepareProducts();
       params.value = data.value;
-      if (!params.value) {
-        params.value = countProductValue(params.contents);
-      }
+      if (!params.value) params.value = countProductValue(params.contents);
       
       if (!params.contents || params.contents.length < 1) {
         log('Seznam SEM: error - no products are available for event', eventName);
@@ -928,25 +894,21 @@ function getEventParams(eventName) {
       let possibleValues = [data.predictedLtv];
       if (data.user) {
         possibleValues = possibleValues.concat([data.user.predictedLTV, data.user.predicted_ltv, data.user.ltv]);
-      }
+      }      
+      setIfDefined(params, 'predicted_ltv', getFirstValue(possibleValues, 'number'));
 
-      let ltv = getFirstValue(possibleValues, 'number');
-      if (ltv) {
-        params.predicted_ltv = makeNumber(ltv);
-      }
       params.value = data.value;
       break;
 
     case 'Search':
+      params.content_type = 'search';
+      params.search_string = data.searchString;
+      
       const prods = prepareProducts();
       if (prods.length) params.contents = prods;
-      
-      params.search_string = data.searchString;
+
       params.value = data.value;
-      params.content_type = 'search';
-      if (!params.value) {
-        params.value = countProductValue(params.contents);
-      }
+      if (!params.value) params.value = countProductValue(params.contents);
       break;
 
 
@@ -955,13 +917,12 @@ function getEventParams(eventName) {
     case 'Donate':
     case 'Schedule':
     case 'SubmitApplication':
-    case 'FindLocation':
       // nothing to do
       break;
   }
 
-  if (params.value) {
-    params.value = Math.round(makeNumber(params.value) * 100) / 100;
+  if (isDefined(params.value)) {
+    params.value = toPrice(params.value);
   }
   
   
@@ -989,95 +950,74 @@ function getEventParams(eventName) {
 
 
 /**
- * Sends hit to sem object
- *
- * @param string eventName
- * @param object eventParams
- * @return void
- */
-function resolveCommand(eventName, eventParams) {
-
-  if (eventName === 'updateUserData') {
-    // updateUserData command
-    updateUserData();
-
-  } else {
-    let eventId;
-    if (data.eventId) {
-      eventId = data.eventId;
-    } else if (eventName === 'Purchase' && eventParams.order_id) {
-      eventId = 'Purchase__'+eventParams.order_id;
-    }
-    
-    // track event command
-    log('Seznam SEM: sending event "'+eventName+'" with params', eventParams);
-    callInWindow('SEM', 'track', eventName, eventParams, 'rtgconv', eventId);
-  }
-}
-
-
-
-/**
  * Calls updateUserData on SEM
  *
  * @return void
  */
-function updateUserData() {
-  let userData = templateStorage.getItem('USER_DATA');
+function updateUserData() {  
+  let userData = templateStorage.getItem(USER_DATA);
   if (!userData) return;
+
+  if (getConsentObject().ad_user_data !== 'granted') return;
+  
   log('Seznam SEM: calling updateUserData with param', userData);
   callInWindow('SEM', 'updateUserData', userData);
 }
 
 
 
+/**
+ * Get or evaluates event ID
+ *
+ * @param string event name
+ * @param object event data
+ * @return string
+ */
+function getEventId(eventName, eventParams) {
+  if (data.eventId) {
+    return makeString(data.eventId);
+  }
+  if (eventName === 'Purchase' && eventParams.order_id) {
+    return 'Purchase__' + eventParams.order_id;
+  }
+}
+
+
 
 
 /* *********** LOAD SCRIPT & INIT SENDING *********** */
-if (!templateStorage.getItem('SCRIPT_INITED_'+data.id)) {
-  templateStorage.setItem('SCRIPT_INITED_'+data.id, true);
-  injectScript('https://l.seznam.cz/sul.js?id='+data.id,
-    () => {
-      log('Seznam SEM: javascript library was loaded successfully');
-      templateStorage.setItem('SCRIPT_LOADED_'+data.id, true);
-      callSEMConfig();
-      updateUserData();
-      flushScriptLoadQueue();
-      data.gtmOnSuccess();
-    },
-    () => {
-      log('Seznam SEM: javascript library cannot be loaded');
-      templateStorage.setItem('SCRIPT_INITED_'+data.id, false);
-      data.gtmOnFailure();
-    }
-  );
-}
 
 
 
-const eventName = data.eventName;
-const eventParams = getEventParams(eventName);
-
-
-let userData = getUserData();
-let isUserUpdateNeed = isUserUpdateNeeded(userData);
-if (isUserUpdateNeed) templateStorage.setItem('USER_DATA', userData);
-
-
-if (!templateStorage.getItem('SCRIPT_LOADED_'+data.id)) {
-  // script is not loaded yet -> add to queue
-  pushToScriptLoadQueue(eventName, eventParams);
+injectScript('https://l.seznam.cz/sul.js?id=' + data.id,
+  () => {
+    // event data
+    const eventName = data.eventName;
+    const eventParams = getEventParams(eventName);
+    const eventId = getEventId(eventName, eventParams);
   
-} else {
-  // script is loaded -> resolve and mark as success
-  if (isUserUpdateNeed && eventName !== 'updateUserData') {
-    updateUserData();
-  }
-
-  resolveCommand(eventName, eventParams);
-}
-
-data.gtmOnSuccess();
+    // user data
+    let userData = getUserData();
+    let isUserUpdateNeed = isUserUpdateNeeded(userData);
+    if (isUserUpdateNeed) templateStorage.setItem(USER_DATA, userData);
+  
+    
+    callSEMConfig();
+    if (eventName === 'updateUserData') {
+      updateUserData();
+    } else {
+      if (isUserUpdateNeed) updateUserData();
+      log('Seznam SEM: sending event "'+eventName+'"'+(eventId ? (' event_id='+eventId) : '')+' with params', eventParams);
+      callInWindow('SEM', 'track', eventName, eventParams, 'rtgconv', eventId);
+    }
+    data.gtmOnSuccess();
+  },
+  () => {
+    log('Seznam SEM: javascript library cannot be loaded');
+    data.gtmOnFailure();
+  },
+  CACHE_TOKEN
+);
 
 
 ___WEB_PERMISSIONS___
@@ -1394,19 +1334,20 @@ ___WEB_PERMISSIONS___
 ___TESTS___
 
 scenarios:
-- name: Basic Test - Success Was Called
-  code: |-
-    runCode(mockData);
-    assertApi('gtmOnSuccess').wasCalled();
-- name: Basic - Script was injected
+- name: Basic Test - Success was called
   code: |-
     runCode(mockData);
     assertApi('injectScript').wasCalled();
-- name: Basic - Script is loaded only once
+    assertApi('gtmOnSuccess').wasCalled();
+- name: Basic Test - Failure was called
   code: |-
+    loadScriptImidiately = false;
     runCode(mockData);
-    runCode(mockData);
-    assertThat(injectScriptTimes).isEqualTo(1);
+    assertApi('gtmOnSuccess').wasNotCalled();
+
+    failScriptLoad();
+    assertApi('gtmOnFailure').wasCalled();
+    assertApi('callInWindow').wasNotCalled();
 - name: Basic - PageView was sent
   code: |-
     runCode(mockData);
@@ -1420,11 +1361,14 @@ scenarios:
   code: |-
     runCode(mockData);
 
-    let expectedParams = {
-      "currency":"CZK"
-    };
-
-    assertHitWasSent('PageView', expectedParams);
+    assertThat(SEM[0].command, 'First command must be "config"').isEqualTo('config');
+    assertThat(SEM[0].params.consent_mode, 'Config must report granted consent').isEqualTo({
+      'ad_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted',
+      'analytics_storage': 'granted',
+      'functionality_storage': 'granted'
+    });
 - name: Script Load Immediately - Without Consent
   code: |-
     consentStatus.ad_storage = 'denied';
@@ -1441,11 +1385,6 @@ scenarios:
     };
 
     assertHitWasSent('PageView', expectedParams);
-- name: Script Loaded Later - With Consent
-  code: |
-    loadScriptImidiately = false;
-    runCode(mockData);
-    assertApi('callInWindow').wasNotCalled();
 - name: Script Loaded Later - With Consent - Then Loaded
   code: |-
     loadScriptImidiately = false;
@@ -1462,76 +1401,173 @@ scenarios:
     assertHitWasSent('PageView', expectedParams);
 - name: Script Loaded Later - Without Consent
   code: |-
+    // Tag fires before sul js is loaded and without any consent.
     loadScriptImidiately = false;
+
+    consentStatus.ad_storage = 'denied';
+    consentStatus.ad_user_data = 'denied';
+    consentStatus.ad_personalization = 'denied';
+    consentStatus.analytics_storage = 'denied';
+    consentStatus.functionality_storage = 'denied';
+
     runCode(mockData);
+
+    // nothing may leave the tag before the library is ready
     assertApi('callInWindow').wasNotCalled();
+
+    // sul js finished loading -> queue is flushed
+    loadScriptCallback();
+
+    assertThat(SEM.length, 'Expected config -> track even without consent').isEqualTo(2);
+
+    assertThat(SEM[0].command, 'First command must be "config"').isEqualTo('config');
+    assertThat(SEM[0].params.consent_mode, 'Config must report denied consent').isEqualTo({
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied'
+    });
+
+    assertThat(SEM[1].command, 'Second command must be "track"').isEqualTo('track');
+    assertThat(SEM[1].name, 'Event name must be PageView').isEqualTo('PageView');
 - name: Event Params - Purchase
-  code: "mockData.eventName = 'Purchase';\nmockData.contentType = 'product';\nmockData.reviewEmail\
-    \ = 'pavel@sabatka.net';\nmockData.user = user;\nmockData.products = [{\n  'item_id':\
-    \ \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\",\n  'price': 3718.18,\n\
-    \  'fullPrice': 4499,\n  'quantity': 3,\n  'item_category': \"Boty\",\n  'item_category2':\
-    \ \"Sportovní boty\",\n  'item_category3': \"Běžecké boty\",\n  'item_category4':\
-    \ false,\n  'item_category5': false\n}];\nmockData.order = {\n  'id': 'T_123',\n\
-    \  'value': 11154.54,\n  'shipping': 99,\n  'shipping_type': 'holub',\n  'payment':\
-    \ 19\n};\n\nrunCode(mockData);\n\nlet expectedParams = {\n  \"currency\":\"CZK\"\
-    ,\n  \n  \"order_id\": \"T_123\",\n  \"value\": 11154.54,\n//  \"event_id\": \"\
-    Purchase__T_123\",\n  \"delivery_price\": 99,\n  \"delivery_type\": \"holub\"\
-    ,\n  \"review_email\": \"pavel@sabatka.net\",\n  \n  'content_type': 'product',\n\
-    \  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category':\
-    \ 'Boty | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity':\
-    \ 3,\n    'unit_price': 3718.18\n  }]\n};\n\n\nassertThat(SEM.length, 'Strange\
-    \ count of SEM calls, expected config -> updateUserData -> track PageView').isEqualTo(3);\n\
-    assertThat(SEM[0].command, 'First command must be \"config\"').isEqualTo('config');\n\
-    \nassertThat(SEM[1].command, 'Third command must be \"updateUserData\"').isEqualTo('updateUserData');\n\
-    assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);\n\
-    \nassertThat(SEM[2].command, 'Second command must be \"track\"').isEqualTo('track');\n\
-    assertThat(SEM[2].name, 'Second command name must be \"Purchase\"').isEqualTo('Purchase');\n\
-    assertThat(SEM[2].params, 'Event params are not same').isEqualTo(expectedParams);"
+  code: |-
+    mockData.eventName = 'Purchase';
+    mockData.contentType = 'product';
+    mockData.reviewEmail = 'pavel@sabatka.net';
+    mockData.user = user;
+    mockData.products = [{
+      'id': "SKU_12345",
+      'name': "Adidas Ultraboost",
+      'price': 3718.18,
+      'fullPrice': 4499,
+      'quantity': 3,
+      'category': "Boty/Sportovní boty/Běžecké boty"
+    }];
+    mockData.order = {
+      'id': 'T_123',
+      'value': 11154.54,
+      'shipping': 99,
+      'shipping_type': 'holub',
+      'payment': 19
+    };
+
+    runCode(mockData);
+
+    let expectedParams = {
+      "currency":"CZK",
+
+      "order_id": "T_123",
+      "value": 11154.54,
+    //  "event_id": "Purchase__T_123",
+      "delivery_price": 99,
+      "delivery_type": "holub",
+      "review_email": "pavel@sabatka.net",
+
+      'content_type': 'product',
+      'contents': [expectedContent]
+    };
+
+
+    assertThat(SEM.length, 'Strange count of SEM calls, expected config -> updateUserData -> track PageView').isEqualTo(3);
+    assertThat(SEM[0].command, 'First command must be "config"').isEqualTo('config');
+
+    assertThat(SEM[1].command, 'Third command must be "updateUserData"').isEqualTo('updateUserData');
+    assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);
+
+    assertThat(SEM[2].command, 'Second command must be "track"').isEqualTo('track');
+    assertThat(SEM[2].name, 'Second command name must be "Purchase"').isEqualTo('Purchase');
+    assertThat(SEM[2].params, 'Event params are not same').isEqualTo(expectedParams);
 - name: Event Params - Purchase - Enhanced Ecommerce
-  code: "mockData.eventName = 'Purchase';\nmockData.contentType = 'product';\nmockData.reviewEmail\
-    \ = 'pavel@sabatka.net';\nmockData.user = user;\nmockData.products = [{\n  'item_id':\
-    \ \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\",\n  'price': 3718.18,\n\
-    \  'fullPrice': 4499,\n  'quantity': 3,\n  'item_category': \"Boty\",\n  'item_category2':\
-    \ \"Sportovní boty\",\n  'item_category3': \"Běžecké boty\",\n  'item_category4':\
-    \ false,\n  'item_category5': false\n}];\nmockData.order = {\n  'transaction_id':\
-    \ 'T_123',\n  'value': \"11154.54\",\n  'tax': \"3.60\",\n  'shipping': \"99\"\
-    ,\n  'shipping_tier': 'holub',\n  'currency': \"CZK\",\n  'coupon': 'SUMMER_SALE',\n\
-    \  'customer_type': 'new',\n  'payment': 19\n};\n\nrunCode(mockData);\n\nlet expectedParams\
-    \ = {\n  \"currency\":\"CZK\",\n  \n  \"order_id\": \"T_123\",\n  \"value\": 11154.54,\n\
-    \  \"value_tax\": 3.60,\n//  \"event_id\": \"Purchase__T_123\",\n  \"delivery_price\"\
-    : 99,\n  \"delivery_type\": \"holub\",\n  \"review_email\": \"pavel@sabatka.net\"\
-    ,\n  \n  'content_type': 'product',\n  'contents': [{\n    'content_name': 'Adidas\
-    \ Ultraboost',\n    'content_category': 'Boty | Sportovní boty | Běžecké boty',\n\
-    \    'id': 'SKU_12345',\n    'quantity': 3,\n    'unit_price': 3718.18\n  }]\n\
-    };\n\n\nassertThat(SEM.length, 'Strange count of SEM calls, expected config ->\
-    \ updateUserData -> track PageView').isEqualTo(3);\nassertThat(SEM[0].command,\
-    \ 'First command must be \"config\"').isEqualTo('config');\n\nassertThat(SEM[1].command,\
-    \ 'Third command must be \"updateUserData\"').isEqualTo('updateUserData');\nassertThat(SEM[1].params,\
-    \ 'Event params are not same').isEqualTo(expectedUserParams);\n\nassertThat(SEM[2].command,\
-    \ 'Second command must be \"track\"').isEqualTo('track');\nassertThat(SEM[2].name,\
-    \ 'Second command name must be \"Purchase\"').isEqualTo('Purchase');\nassertThat(SEM[2].params,\
-    \ 'Event params are not same').isEqualTo(expectedParams);"
+  code: |-
+    mockData.eventName = 'Purchase';
+    mockData.contentType = 'product';
+    mockData.reviewEmail = 'pavel@sabatka.net';
+    mockData.user = user;
+    mockData.products = [product];
+    mockData.order = {
+      'transaction_id': 'T_123',
+      'value': "11154.54",
+      'tax': "3.60",
+      'shipping': "99",
+      'shipping_tier': 'holub',
+      'currency': "CZK",
+      'coupon': 'SUMMER_SALE',
+      'customer_type': 'new',
+      'payment': 19
+    };
+
+    runCode(mockData);
+
+    let expectedParams = {
+      "currency":"CZK",
+
+      "order_id": "T_123",
+      "value": 11154.54,
+      "value_tax": 3.60,
+    //  "event_id": "Purchase__T_123",
+      "delivery_price": 99,
+      "delivery_type": "holub",
+      "review_email": "pavel@sabatka.net",
+
+      'content_type': 'product',
+      'contents': [{
+        'content_name': 'Adidas Ultraboost',
+        'content_category': 'Boty | Sportovní boty | Běžecké boty',
+        'id': 'SKU_12345',
+        'quantity': 3,
+        'unit_price': 3718.18
+      }]
+    };
+
+
+    assertThat(SEM.length, 'Strange count of SEM calls, expected config -> updateUserData -> track PageView').isEqualTo(3);
+    assertThat(SEM[0].command, 'First command must be "config"').isEqualTo('config');
+
+    assertThat(SEM[1].command, 'Third command must be "updateUserData"').isEqualTo('updateUserData');
+    assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);
+
+    assertThat(SEM[2].command, 'Second command must be "track"').isEqualTo('track');
+    assertThat(SEM[2].name, 'Second command name must be "Purchase"').isEqualTo('Purchase');
+    assertThat(SEM[2].params, 'Event params are not same').isEqualTo(expectedParams);
 - name: Event Params - Purchase - Zero value
-  code: "mockData.eventName = 'Purchase';\nmockData.contentType = 'product';\nmockData.user\
-    \ = user;\nmockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name':\
-    \ \"Adidas Ultraboost\",\n  'price': 3718.18,\n  'fullPrice': 4499,\n  'quantity':\
-    \ 3,\n  'item_category': \"Boty\",\n  'item_category2': \"Sportovní boty\",\n\
-    \  'item_category3': \"Běžecké boty\",\n  'item_category4': false,\n  'item_category5':\
-    \ false\n}];\nmockData.order = {\n  'id': 'T_123',\n  'value': 0,\n  'shipping':\
-    \ 99,\n  'shipping_type': 'holub',\n  'payment': 19\n};\n\nrunCode(mockData);\n\
-    \nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \n  \"order_id\": \"T_123\"\
-    ,\n  \"value\": 0,\n//  \"event_id\": \"Purchase__T_123\",\n  \"delivery_price\"\
-    : 99,\n  \"delivery_type\": \"holub\",\n  \n  'content_type': 'product',\n  'contents':\
-    \ [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category': 'Boty\
-    \ | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n    'quantity': 3,\n\
-    \    'unit_price': 3718.18\n  }]\n};\n\n\nassertThat(SEM.length, 'Strange count\
-    \ of SEM calls, expected config -> updateUserData -> track PageView').isEqualTo(3);\n\
-    assertThat(SEM[0].command, 'First command must be \"config\"').isEqualTo('config');\n\
-    \nassertThat(SEM[1].command, 'Third command must be \"updateUserData\"').isEqualTo('updateUserData');\n\
-    assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);\n\
-    \nassertThat(SEM[2].command, 'Second command must be \"track\"').isEqualTo('track');\n\
-    assertThat(SEM[2].name, 'Second command name must be \"Purchase\"').isEqualTo('Purchase');\n\
-    assertThat(SEM[2].params, 'Event params are not same').isEqualTo(expectedParams);"
+  code: |-
+    mockData.eventName = 'Purchase';
+    mockData.contentType = 'product';
+    mockData.user = user;
+    mockData.products = [product];
+    mockData.order = {
+      'id': 'T_123',
+      'value': 0,
+      'shipping': 99,
+      'shipping_type': 'holub',
+      'payment': 19
+    };
+
+    runCode(mockData);
+
+    let expectedParams = {
+      "currency":"CZK",
+      "order_id": "T_123",
+      "value": 0,
+      "delivery_price": 99,
+      "delivery_type": "holub",
+
+      'content_type': 'product',
+      'contents': [expectedContent]
+    };
+
+
+    assertThat(SEM.length, 'Strange count of SEM calls, expected config -> updateUserData -> track PageView').isEqualTo(3);
+    assertThat(SEM[0].command, 'First command must be "config"').isEqualTo('config');
+
+    assertThat(SEM[1].command, 'Third command must be "updateUserData"').isEqualTo('updateUserData');
+    assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);
+
+    assertThat(SEM[2].command, 'Second command must be "track"').isEqualTo('track');
+    assertThat(SEM[2].name, 'Second command name must be "Purchase"').isEqualTo('Purchase');
+    assertThat(SEM[2].params, 'Event params are not same').isEqualTo(expectedParams);
 - name: Event Params - ViewContent - Page
   code: |-
     mockData.eventName = 'ViewContent';
@@ -1552,59 +1588,99 @@ scenarios:
 
     assertHitWasSent('ViewContent', expectedParams);
 - name: Event Params - ViewContent - Product
-  code: "mockData.eventName = 'ViewContent';\nmockData.contentType = 'product';\n\
-    mockData.products = [{\n  'item_id': \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\"\
-    ,\n  'price': 3718.18,\n  'fullPrice': 4499,\n  'quantity': 1,\n  'item_category':\
-    \ \"Boty\",\n  'item_category2': \"Sportovní boty\",\n  'item_category3': \"Bě\
-    žecké boty\",\n  'item_category4': false,\n  'item_category5': false\n}];\n\n\
-    runCode(mockData);\n\nlet expectedParams = {\n  \"currency\":\"CZK\",\n  'value':\
-    \ 3718.18,\n  \n  'content_type': 'product',\n  'contents': [{\n    'content_name':\
-    \ 'Adidas Ultraboost',\n    'content_category': 'Boty | Sportovní boty | Běžecké\
-    \ boty',\n    'id': 'SKU_12345',\n    'quantity': 1,\n    'unit_price': 3718.18\n\
-    \  }]\n};\n\nassertHitWasSent('ViewContent', expectedParams);"
+  code: |-
+    mockData.eventName = 'ViewContent';
+    mockData.contentType = 'product';
+    product.quantity = 1;
+    mockData.products = [product];
+
+    runCode(mockData);
+
+    expectedContent.quantity = 1;
+    let expectedParams = {
+      "currency":"CZK",
+      'value': 3718.18,
+      'content_type': 'product',
+      'contents': [expectedContent]
+    };
+
+    assertHitWasSent('ViewContent', expectedParams);
 - name: Event Params - ViewContent - Shoptet Product
-  code: "mockData.eventName = 'ViewContent';\nmockData.contentType = 'product';\n\
-    mockData.products = [{\n  'id': 12345,\n  'name': \"Adidas Ultraboost\",\n  'priceWithVat':\
-    \ 3718.18,\n  'currentCategory': \"Boty | Sportovní boty | Běžecké boty\",\n \
-    \ 'defaultCategory': \"Boty | Sportovní boty | Běžecké boty\",\n  'manufacturer':\
-    \ 'Adidas',\n  'currency': 'CZK',\n}];\n\nrunCode(mockData);\n\nlet expectedParams\
-    \ = {\n  \"currency\":\"CZK\",\n  'value': 3718.18,\n  \n  'content_type': 'product',\n\
-    \  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n    'content_category':\
-    \ 'Boty | Sportovní boty | Běžecké boty',\n    'id': '12345',\n    'quantity':\
-    \ 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('ViewContent', expectedParams);"
+  code: |-
+    mockData.eventName = 'ViewContent';
+    mockData.contentType = 'product';
+    mockData.products = [{
+      'id': 12345,
+      'name': "Adidas Ultraboost",
+      'priceWithVat': 3718.18,
+      'currentCategory': "Boty | Sportovní boty | Běžecké boty",
+      'defaultCategory': "Boty | Sportovní boty | Běžecké boty",
+      'manufacturer': 'Adidas',
+      'currency': 'CZK',
+    }];
+
+    runCode(mockData);
+
+    expectedContent.id = "12345";
+    expectedContent.quantity = 1;
+    let expectedParams = {
+      "currency":"CZK",
+      'value': 3718.18,
+      'content_type': 'product',
+      'contents': [expectedContent]
+    };
+
+    assertHitWasSent('ViewContent', expectedParams);
 - name: Event Params - AddToCart
-  code: "mockData.eventName = 'AddToCart';\nmockData.contentType = 'product';\nmockData.products\
-    \ = [{\n  'item_id': \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\",\n \
-    \ 'price': 3718.18,\n  'fullPrice': 4499,\n  'quantity': 1,\n  'item_category':\
-    \ \"Boty\",\n  'item_category2': \"Sportovní boty\",\n  'item_category3': \"Bě\
-    žecké boty\",\n  'item_category4': false,\n  'item_category5': false\n}];\n\n\
-    runCode(mockData);\n\nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \"value\"\
-    : 3718.18,\n  \n  'content_type': 'product',\n  'contents': [{\n    'content_name':\
-    \ 'Adidas Ultraboost',\n    'content_category': 'Boty | Sportovní boty | Běžecké\
-    \ boty',\n    'id': 'SKU_12345',\n    'quantity': 1,\n    'unit_price': 3718.18\n\
-    \  }]\n};\n\nassertHitWasSent('AddToCart', expectedParams);"
+  code: |-
+    mockData.eventName = 'AddToCart';
+    mockData.contentType = 'product';
+    mockData.products = [product];
+
+    runCode(mockData);
+
+    let expectedParams = {
+      "currency":"CZK",
+      "value": 11154.54,
+      'content_type': 'product',
+      'contents': [expectedContent]
+    };
+
+    assertHitWasSent('AddToCart', expectedParams);
 - name: Event Params - AddToCart - Products as Object
-  code: "mockData.eventName = 'AddToCart';\nmockData.contentType = 'product';\nmockData.products\
-    \ = {\n  'item_id': \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\",\n  'price':\
-    \ 3718.18,\n  'fullPrice': 4499,\n  'quantity': 1,\n  'item_category': \"Boty\"\
-    ,\n  'item_category2': \"Sportovní boty\",\n  'item_category3': \"Běžecké boty\"\
-    ,\n  'item_category4': false,\n  'item_category5': false\n};\n\nrunCode(mockData);\n\
-    \nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \"value\": 3718.18,\n  \n\
-    \  'content_type': 'product',\n  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n\
-    \    'content_category': 'Boty | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n\
-    \    'quantity': 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('AddToCart',\
-    \ expectedParams);"
+  code: |-
+    mockData.eventName = 'AddToCart';
+    mockData.contentType = 'product';
+    mockData.products = product; // an object instead of array
+
+    runCode(mockData);
+
+    let expectedParams = {
+      "currency":"CZK",
+      "value": 11154.54,
+      'content_type': 'product',
+      'contents': [expectedContent]
+    };
+
+    assertHitWasSent('AddToCart', expectedParams);
 - name: Event Params - AddToCart - Product ID is Integer
-  code: "mockData.eventName = 'AddToCart';\nmockData.contentType = 'product';\nmockData.products\
-    \ = {\n  'item_id': 12345,\n  'item_name': \"Adidas Ultraboost\",\n  'price':\
-    \ 3718.18,\n  'fullPrice': 4499,\n  'quantity': 1,\n  'item_category': \"Boty\"\
-    ,\n  'item_category2': \"Sportovní boty\",\n  'item_category3': \"Běžecké boty\"\
-    ,\n  'item_category4': false,\n  'item_category5': false\n};\n\nrunCode(mockData);\n\
-    \nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \"value\": 3718.18,\n  \n\
-    \  'content_type': 'product',\n  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n\
-    \    'content_category': 'Boty | Sportovní boty | Běžecké boty',\n    'id': '12345',\n\
-    \    'quantity': 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('AddToCart',\
-    \ expectedParams);"
+  code: |-
+    mockData.eventName = 'AddToCart';
+    mockData.contentType = 'product';
+    product.item_id = 12345;
+    mockData.products = [product];
+
+    runCode(mockData);
+
+    expectedContent.id = "12345";
+    let expectedParams = {
+      "currency":"CZK",
+      "value": 11154.54,
+      'content_type': 'product',
+      'contents': [expectedContent]
+    };
+
+    assertHitWasSent('AddToCart', expectedParams);
 - name: Event Params - StartTrial - From Fields
   code: |-
     mockData.eventName = 'StartTrial';
@@ -1656,18 +1732,28 @@ scenarios:
 
     assertHitWasSent('InitiateCheckout', expectedParams);
 - name: Event Params - Search
-  code: "mockData.eventName = 'Search';\nmockData.contentType = 'search';\nmockData.searchString\
-    \ = 'Adidas Ultra';\nmockData.searchResultCount = 1;\nmockData.products = [{\n\
-    \  'item_id': \"SKU_12345\",\n  'item_name': \"Adidas Ultraboost\",\n  'price':\
-    \ 3718.18,\n  'fullPrice': 4499,\n  'quantity': 1,\n  'item_category': \"Boty\"\
-    ,\n  'item_category2': \"Sportovní boty\",\n  'item_category3': \"Běžecké boty\"\
-    ,\n  'item_category4': false,\n  'item_category5': false\n}];\n\nrunCode(mockData);\n\
-    \nlet expectedParams = {\n  \"currency\":\"CZK\",\n  \"value\":3718.18,\n  \n\
-    \  'content_type': 'search',\n//  'num_items': 1,\n  'search_string': 'Adidas\
-    \ Ultra',\n  \n  'contents': [{\n    'content_name': 'Adidas Ultraboost',\n  \
-    \  'content_category': 'Boty | Sportovní boty | Běžecké boty',\n    'id': 'SKU_12345',\n\
-    \    'quantity': 1,\n    'unit_price': 3718.18\n  }]\n};\n\nassertHitWasSent('Search',\
-    \ expectedParams);"
+  code: |-
+    mockData.eventName = 'Search';
+    mockData.contentType = 'search';
+    mockData.searchString = 'Adidas Ultra';
+    mockData.searchResultCount = 1;
+
+    product.quantity = 1;
+    mockData.products = [product];
+
+    runCode(mockData);
+
+
+    expectedContent.quantity = 1;
+    let expectedParams = {
+      "currency":"CZK",
+      "value":3718.18,
+      'content_type': 'search',
+      'search_string': 'Adidas Ultra',
+      'contents': [expectedContent]
+    };
+
+    assertHitWasSent('Search', expectedParams);
 - name: Event Params - Optional
   code: |-
     mockData.url = 'https://www.sabatka.net/cs';
@@ -1780,46 +1866,367 @@ scenarios:
     assertThat(SEM[1].params, 'Event params are not same').isEqualTo(expectedUserParams);
 
     assertThat(SEM[2].command, 'Second command must be "track"').isEqualTo('track');
-setup: "\n// --------- MOCK DATA ---------\nlet mockData = {\n  'id': 12345,\n  'eventName':\
-  \ 'PageView',\n  'currency': 'CZK',\n  'usingConsentModeV2': true\n};\n\nlet consentStatus\
-  \ = {\n  'ad_storage': 'granted',\n  'ad_personalization': 'granted',\n  'ad_user_data':\
-  \ 'granted',\n  'analytics_storage': 'granted'\n};\n\nlet user = {\n  'email': 'pavel@sabatka.net',\n\
-  \  'phone': '+420111222333',\n  'fname': 'Pavel',\n  'lname': 'Sabatka',\n  'g':\
-  \ 'm',\n  'birth': '19800823',\n  'city': 'Brno',\n  'street': 'Brnenska 1',\n \
-  \ 'postalCode': '60200',\n  'countryCode': 'CZ',\n  'subscription': 'subscription123'\n\
-  };\n\nlet loadScriptImidiately = true;\nlet loadScriptCallback = null;\n\n\n// ---------\
-  \ EXPECTED DATA ------------------\n\nvar expectedUserParams = {\n  \"fn\":\"Pavel\"\
-  ,\n  \"ln\":\"Sabatka\",\n  \"ge\":\"m\",\n  \"ct\":\"Brno\",\n  \"sr\":\"Brnenska\
-  \ 1\",\n  \"zp\":\"60200\",\n  \"country\":\"CZ\",\n  \"db\":\"19800823\",\n  \"\
-  subscription_id\":\"subscription123\",\n  'em': \"pavel@sabatka.net\",\n  'ph':\
-  \ \"+420111222333\",\n};\n\n\n// --------- RESET TEST ENVIRONMENT ---------\nconst\
-  \ log = require('logToConsole');\nconst templateStorage = require('templateStorage');\n\
-  templateStorage.clear();\nlet injectScriptTimes = 0;\nlet SEM = [];\n\n\n\n// ---------\
-  \ MOCK METHODS ---------\nmock('getTimestamp', function() {\n  return 1766595600;\
-  \ // Merry Christmas :-)\n});\n\nmock('sha256', function(str, succ, fail) {\n  var\
-  \ digest = false;\n  if (str === 'pavel@sabatka.net') digest = '04f7acd5d8241e64e43bbdb5a2589af98090435f190999fc9ce00d96b2c6df3a';\n\
-  \  if (str === '+420111222333') digest = '8e858b30491acc065fdb545ef111ac6a3f43a6debe60e594b46ae8915c6f6ed6';\n\
-  \  if (digest) {\n    succ(digest);\n  } else {\n    fail();\n  }\n});\n\nmock('injectScript',\
-  \ function(url, success, failure) {\n  injectScriptTimes++;\n  assertThat(url).isEqualTo('https://l.seznam.cz/sul.js?id=12345');\n\
-  \  \n  if (loadScriptImidiately) {\n    success();\n  } else {\n    loadScriptCallback\
-  \ = success;\n  }\n});\n\nmock('isConsentGranted', function(name) {\n  return consentStatus[name]\
-  \ === 'granted';\n});\n\nmock('callInWindow', function(tracker, command, param1,\
-  \ param2, param3, param4) {\n  const JSON = require('JSON');\n  let params = [command,\
-  \ param1];\n  \n  if (command === 'config' || command === 'updateUserData') {\n\
-  \    SEM.push({\n      'command': command,\n      'params': JSON.parse(JSON.stringify(param1))\n\
-  \    });\n\n  } else if (command === 'track') {\n    if (param2) {\n      param2\
-  \ = JSON.parse(JSON.stringify(param2));\n      if (param2.event_time) param2.event_time\
-  \ = 1766595600;\n    }\n    SEM.push({\n      'command': command,\n      'name':\
-  \ param1,\n      'params': param2,\n      'cmdstring': param3,\n      'eventId':\
-  \ param4\n    });\n  } else {\n    assertThat(false, 'Invalid command '+command).isTrue();\n\
-  \  }\n});\n\n// --------- CUSTOM ASSERTATIONS ---------\nfunction assertHitWasSent(name,\
-  \ params, eventId) {\n  const JSON = require('JSON');\n  params = JSON.parse(JSON.stringify(params));\n\
-  \  assertThat(2, 'Expected only 1 event').isEqualTo(SEM.length);\n  assertThat(SEM[0].command,\
-  \ 'First command must be \"config\"').isEqualTo('config');\n  assertThat(SEM[1].command,\
-  \ 'Second command must be \"track\"').isEqualTo('track');\n  assertThat(SEM[1].name,\
-  \ 'Event name are not same').isEqualTo(name);\n  assertThat(SEM[1].params, 'Event\
-  \ params are not same').isEqualTo(params);\n  if (eventId) {\n    assertThat(SEM[1].eventId,\
-  \ 'Event ID is not same').isEqualTo(eventId);\n  }\n}"
+- name: Event ID - Two queued events keep their own event IDs
+  code: |-
+    // Both tags fire before sul js is loaded, so both go through the queue.
+    loadScriptImidiately = false;
+
+    let firstEvent = {
+      'id': 12345,
+      'eventName': 'ViewContent',
+      'contentType': 'page',
+      'currency': 'CZK',
+      'usingConsentModeV2': true,
+      'eventId': 'EVENT_ID_1'
+    };
+
+    let secondEvent = {
+      'id': 12345,
+      'eventName': 'Lead',
+      'currency': 'CZK',
+      'usingConsentModeV2': true,
+      'eventId': 'EVENT_ID_2'
+    };
+
+    runCode(firstEvent);
+    runCode(secondEvent);
+
+    assertApi('callInWindow').wasNotCalled();
+
+    // sul js finished loading -> queue is flushed
+    loadScriptCallback();
+
+    let tracks = getTrackCalls();
+
+    assertThat(tracks.length, 'Expected 2 tracked events').isEqualTo(2);
+    assertThat(tracks[0].name, 'First tracked event name').isEqualTo('ViewContent');
+    assertThat(tracks[0].eventId, 'First queued event must keep event ID EVENT_ID_1').isEqualTo('EVENT_ID_1');
+    assertThat(tracks[1].name, 'Second tracked event name').isEqualTo('Lead');
+    assertThat(tracks[1].eventId, 'Second queued event must use EVENT_ID_2, not inherit EVENT_ID_1').isEqualTo('EVENT_ID_2');
+- name: Event ID - Queued event without ID does not inherit ID from another event
+  code: |-
+    // First queued tag has an event ID, second one has none.
+    loadScriptImidiately = false;
+
+    let firstEvent = {
+      'id': 12345,
+      'eventName': 'Lead',
+      'currency': 'CZK',
+      'usingConsentModeV2': true,
+      'eventId': 'EVENT_ID_1'
+    };
+
+    let secondEvent = {
+      'id': 12345,
+      'eventName': 'PageView',
+      'currency': 'CZK',
+      'usingConsentModeV2': true
+    };
+
+    runCode(firstEvent);
+    runCode(secondEvent);
+
+    loadScriptCallback();
+
+    let tracks = getTrackCalls();
+
+    assertThat(tracks.length, 'Expected 2 tracked events').isEqualTo(2);
+    assertThat(tracks[0].eventId, 'First queued event must keep event ID EVENT_ID_1').isEqualTo('EVENT_ID_1');
+
+    let secondId = tracks[1].eventId;
+    assertThat(secondId === undefined || secondId === null, 'Second queued event has no event ID, sul js must generate its own').isTrue();
+- name: Event ID - Queued Purchase events derive ID from their own order
+  code: |-
+    loadScriptImidiately = false;
+
+    let firstOrder = {
+      'id': 12345,
+      'eventName': 'Purchase',
+      'contentType': 'product',
+      'currency': 'CZK',
+      'usingConsentModeV2': true,
+      'products': [product],
+      'order': { 'id': 'T_1', 'value': 100 }
+    };
+
+    let secondOrder = {
+      'id': 12345,
+      'eventName': 'Purchase',
+      'contentType': 'product',
+      'currency': 'CZK',
+      'usingConsentModeV2': true,
+      'products': [product],
+      'order': { 'id': 'T_2', 'value': 200 }
+    };
+
+    runCode(firstOrder);
+    runCode(secondOrder);
+
+    loadScriptCallback();
+
+    let tracks = getTrackCalls();
+
+    assertThat(tracks.length, 'Expected 2 tracked events').isEqualTo(2);
+    assertThat(tracks[0].eventId, 'First order must use Purchase__T_1').isEqualTo('Purchase__T_1');
+    assertThat(tracks[1].eventId, 'Second order must use Purchase__T_2').isEqualTo('Purchase__T_2');
+    assertThat(tracks[0].params.order_id, 'First order params').isEqualTo('T_1');
+    assertThat(tracks[1].params.order_id, 'Second order params').isEqualTo('T_2');
+- name: Event ID - Two events after script load keep their own event IDs
+  code: |-
+    // Control scenario - no queue involved, sul js is already loaded.
+    let firstEvent = {
+      'id': 12345,
+      'eventName': 'ViewContent',
+      'contentType': 'page',
+      'currency': 'CZK',
+      'usingConsentModeV2': true,
+      'eventId': 'EVENT_ID_1'
+    };
+
+    let secondEvent = {
+      'id': 12345,
+      'eventName': 'Lead',
+      'currency': 'CZK',
+      'usingConsentModeV2': true,
+      'eventId': 'EVENT_ID_2'
+    };
+
+    runCode(firstEvent);
+    runCode(secondEvent);
+
+    let tracks = getTrackCalls();
+
+    assertThat(tracks.length, 'Expected 2 tracked events').isEqualTo(2);
+    assertThat(tracks[0].eventId, 'First event must keep event ID EVENT_ID_1').isEqualTo('EVENT_ID_1');
+    assertThat(tracks[1].eventId, 'Second event must keep event ID EVENT_ID_2').isEqualTo('EVENT_ID_2');
+- name: Consent Object - Consent Mode v2 disabled without consent object
+  code: |-
+    // Checkbox unticked but the object left empty - the tag must not crash
+    // and must fall back to denied.
+    mockData.usingConsentModeV2 = false;
+
+    runCode(mockData);
+
+    assertApi('gtmOnSuccess').wasCalled();
+
+    assertThat(SEM[0].params.consent_mode, 'Missing consent object must default to denied').isEqualTo({
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied'
+    });
+- name: Consent Object - Different formats
+  code: |-
+    consentStatus.ad_storage = 'denied';   // CM v2 all denied - must be ignored
+    consentStatus.ad_user_data = 'denied';
+    consentStatus.ad_personalization = 'denied';
+    consentStatus.analytics_storage = 'denied';
+    consentStatus.functionality_storage = 'denied';
+
+    mockData.usingConsentModeV2 = false;
+    mockData.consentStateObject = {
+      'ad_storage': 1, 'ad_user_data': 'granted', 'ad_personalization': true,
+      'analytics_storage': 'denied', 'functionality_storage': 0
+    };
+
+    runCode(mockData);
+
+    assertThat(SEM[0].params.consent_mode, 'All three input formats must be parsed').isEqualTo({
+      'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted',
+      'analytics_storage': 'denied', 'functionality_storage': 'denied'
+    });
+- name: Event Params - Product without price
+  code: |-
+    // Product has no price at all -> unit_price and value must be omitted,
+    // never sent as NaN.
+    mockData.eventName = 'AddToCart';
+    mockData.contentType = 'product';
+    mockData.products = [{
+      'item_id': 'SKU_NO_PRICE',
+      'item_name': 'Produkt bez ceny',
+      'quantity': 2,
+      'item_category': 'Boty'
+    }];
+
+    runCode(mockData);
+
+    let expectedParams = {
+      "currency": "CZK",
+      'content_type': 'product',
+      'contents': [{
+        'id': 'SKU_NO_PRICE',
+        'content_name': 'Produkt bez ceny',
+        'quantity': 2,
+        'content_category': 'Boty'
+      }]
+    };
+
+    assertHitWasSent('AddToCart', expectedParams);
+    assertThat(SEM[1].params.value, 'value must be omitted, not NaN').isEqualTo(undefined);
+setup: |2-
+
+  // --------- MOCK DATA ---------
+  let mockData = {
+    'id': 12345,
+    'eventName': 'PageView',
+    'currency': 'CZK',
+    'usingConsentModeV2': true
+  };
+
+  let consentStatus = {
+    'ad_storage': 'granted',
+    'ad_personalization': 'granted',
+    'ad_user_data': 'granted',
+    'analytics_storage': 'granted',
+    'functionality_storage': 'granted'
+  };
+
+  let product = {
+    'item_id': "SKU_12345",
+    'item_name': "Adidas Ultraboost",
+    'price': 3718.18,
+    'fullPrice': 4499,
+    'quantity': 3,
+    'item_category': "Boty",
+    'item_category2': "Sportovní boty",
+    'item_category3': "Běžecké boty"
+  };
+
+  let user = {
+    'email': 'pavel@sabatka.net',
+    'phone': '+420111222333',
+    'fname': 'Pavel',
+    'lname': 'Sabatka',
+    'g': 'm',
+    'birth': '19800823',
+    'city': 'Brno',
+    'street': 'Brnenska 1',
+    'postalCode': '60200',
+    'countryCode': 'CZ',
+    'subscription': 'subscription123'
+  };
+
+  let loadScriptImidiately = true;
+  let pendingSuccess = [];
+  let pendingFailure = [];
+
+
+  // --------- EXPECTED DATA ------------------
+
+  let expectedUserParams = {
+    "fn":"Pavel",
+    "ln":"Sabatka",
+    "ge":"m",
+    "ct":"Brno",
+    "sr":"Brnenska 1",
+    "zp":"60200",
+    "country":"CZ",
+    "db":"19800823",
+    "subscription_id":"subscription123",
+    'em': "pavel@sabatka.net",
+    'ph': "+420111222333",
+  };
+
+  let expectedContent = {
+    'id': 'SKU_12345',
+    'content_name': 'Adidas Ultraboost',
+    'content_category': 'Boty | Sportovní boty | Běžecké boty',
+    'quantity': 3,
+    'unit_price': 3718.18
+  };
+
+
+  // --------- RESET TEST ENVIRONMENT ---------
+  const log = require('logToConsole');
+  const templateStorage = require('templateStorage');
+  templateStorage.clear();
+  let SEM = [];
+
+
+
+  // --------- MOCK METHODS ---------
+
+  mock('injectScript', function(url, success, failure, cacheToken) {
+    assertThat(url).isEqualTo('https://l.seznam.cz/sul.js?id=12345');
+    assertThat(cacheToken, 'cacheToken must be set, otherwise every tag loads its own script').isEqualTo('seznam_sem_12345');
+
+    if (loadScriptImidiately) {
+      success();
+    } else {
+      pendingSuccess.push(success);
+      pendingFailure.push(failure);
+    }
+  });
+
+
+  // same name as before, so existing scenarios stay unchanged
+  function loadScriptCallback() {
+    const cbs = pendingSuccess;
+    pendingSuccess = [];
+    for (let i = 0; i < cbs.length; i++) cbs[i]();
+  }
+
+  function failScriptLoad() {
+    const cbs = pendingFailure;
+    pendingFailure = [];
+    for (let i = 0; i < cbs.length; i++) cbs[i]();
+  }
+
+
+  mock('isConsentGranted', function(name) {
+    return consentStatus[name] === 'granted';
+  });
+
+  mock('callInWindow', function(tracker, command, param1, param2, param3, param4) {
+    const JSON = require('JSON');
+
+    if (command === 'config' || command === 'updateUserData') {
+      SEM.push({
+        'command': command,
+        'params': JSON.parse(JSON.stringify(param1))
+      });
+
+    } else if (command === 'track') {
+      if (param2) {
+        param2 = JSON.parse(JSON.stringify(param2));
+      }
+      SEM.push({
+        'command': command,
+        'name': param1,
+        'params': param2,
+        'cmdstring': param3,
+        'eventId': param4
+      });
+    } else {
+      assertThat(false, 'Invalid command '+command).isTrue();
+    }
+  });
+
+  // --------- CUSTOM ASSERTATIONS ---------
+  function assertHitWasSent(name, params, eventId) {
+    const JSON = require('JSON');
+    params = JSON.parse(JSON.stringify(params));
+    assertThat(SEM.length, 'Expected only 1 event').isEqualTo(2);
+    assertThat(SEM[0].command, 'First command must be "config"').isEqualTo('config');
+    assertThat(SEM[1].command, 'Second command must be "track"').isEqualTo('track');
+    assertThat(SEM[1].name, 'Event name are not same').isEqualTo(name);
+    assertThat(SEM[1].params, 'Event params are not same').isEqualTo(params);
+    if (eventId) {
+      assertThat(SEM[1].eventId, 'Event ID is not same').isEqualTo(eventId);
+    }
+  }
+
+  // --------- HELPERS ---------
+  function getTrackCalls() {
+    let tracks = [];
+    for (let i = 0; i < SEM.length; i++) {
+      if (SEM[i].command === 'track') {
+        tracks.push(SEM[i]);
+      }
+    }
+    return tracks;
+  }
 
 
 ___NOTES___
